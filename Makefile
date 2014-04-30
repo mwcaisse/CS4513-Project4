@@ -14,7 +14,7 @@
 CC= g++ 
 #PLATFORM= -DCYGWIN		# uncomment for cygwin
 #PLATFORM= -DMACOS  		# uncomment for macos
-#LDFLAGS= -lncurses -lrt	# uncomment linux/cygwin
+LDFLAGS= -lncurses -lrt	# uncomment linux/cygwin
 #LDFLAGS= -lncurses 		# uncomment for macos
 INCPATH= include		# path to engine includes
 ENG= lib/libdragonfly-linux64.a	# dragonfly engine
