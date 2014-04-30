@@ -26,7 +26,9 @@ GAMESRC= Saucer.cpp \
          Star.cpp \
          GameStart.cpp \
          GameOver.cpp \
-         Hero.cpp
+         Hero.cpp \
+         NetworkManager.cpp \
+         EventNetwork.cpp
 GAME= game.cpp
 EXECUTABLE= game		
 OBJECTS= $(GAMESRC:.cpp=.o)
