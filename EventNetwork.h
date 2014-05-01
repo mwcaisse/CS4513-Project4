@@ -24,8 +24,8 @@ private:
 	MessageOp operation;
 	/** The type of object if applicable */
 	std::string objectType;
-	/** The id of the object, if applicable */
-	int objectId;
+	/** A misc integer field, can be used for objectId, or keyCode */
+	int miscInt;
 	/** The data contained in the message */
 	std::string data;
 
@@ -56,11 +56,11 @@ public:
 
 	std::string getObjectType();
 
-	/** Returns the object id
+	/** Returns the misc int
 	 *
 	 */
 
-	int getObjectId();
+	int getMiscInt();
 
 	/** Returns the data of the message
 	 *
@@ -86,11 +86,11 @@ public:
 
 	void setObjectType(std::string type);
 
-	/** Sets the object id to the specified id
+	/** Sets the misc int to the specified int
 	 *
 	 */
 
-	void setObjectId(int id);
+	void setMiscInt(int misc);
 
 	/** Sets the network data to the specified data
 	 *

@@ -21,7 +21,7 @@ EventNetwork::~EventNetwork() {
 EventNetwork::EventNetwork(message_header header, std::string data) {
 	setData(data);
 	setObjectType(header.object_type);
-	setObjectId(header.object_id);
+	setMiscInt(header.misc);
 	setLength(header.len);
 	setOperation((MessageOp)header.op);
 }
@@ -50,12 +50,12 @@ std::string EventNetwork::getObjectType() {
 	return objectType;
 }
 
-/** Returns the object id
+/** Returns the misc int
  *
  */
 
-int EventNetwork::getObjectId() {
-	return objectId;
+int EventNetwork::getMiscInt() {
+	return miscInt;
 }
 
 /** Returns the data of the message
@@ -90,12 +90,12 @@ void EventNetwork::setObjectType(std::string type) {
 	this->objectType = type;
 }
 
-/** Sets the objectId to the specified id
+/** Sets the misc int to the specified int
  *
  */
 
-void EventNetwork::setObjectId(int objectId) {
-	this->objectId = objectId;
+void EventNetwork::setMiscInt(int misc) {
+	this->miscInt = misc;
 }
 
 /** Sets the network data to the specified data

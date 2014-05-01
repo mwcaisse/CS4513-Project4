@@ -20,7 +20,7 @@ enum MessageOp {CREATE = 0, UPDATE = 1, DELETE = 2, KEYSTK = 3};
 struct _network_message_header {
 	int op; // The operation this message is performing
 	int len; // the length of the message
-	int object_id; // the id of the object, if applicable
+	int misc; // optional int field
 	char object_type[OBJECT_TYPE_LEN]; // the object type, if applicable
 };
 
