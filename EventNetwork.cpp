@@ -24,6 +24,7 @@ EventNetwork::EventNetwork(message_header header, std::string data) {
 	setMiscInt(header.misc);
 	setLength(header.len);
 	setOperation((MessageOp)header.op);
+	setType(NETWORK_EVENT); // set the type
 }
 
 /** Returns the length of the data stored
