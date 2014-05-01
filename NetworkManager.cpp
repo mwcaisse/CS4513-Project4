@@ -143,6 +143,33 @@ int NetworkManager::close() {
 	return 0;
 }
 
+/** Sends the specified message over the network
+	 *  @param op The message Operation
+	 *  @param objectType the object type of the message
+	 *  @param the data in the message
+	 *  @return The number of bytes sent, or -1 if error occurred
+	 */
+
+int NetworkManager::sendMessage(MessageOp op, std::string objectType, std::string data) {
+	if (objectType.length() >= OBJECT_TYPE_LEN) {
+		return -1;
+	}
+
+	message_header header;
+	header.op = op;
+	header.len = data.length() + 1; // + 1 for null terminator
+	strncpy(header.object_type, objectType.c_str(), OBJECT_TYPE_LEN);
+
+	int length = data.length() + sizeof(header);
+	char buffer[length + 1];
+
+	memcpy(buffer, (void*) &header, sizeof(header));
+	memcpy(buffer + sizeof(header), data.c_str(), data.length() + 1);
+
+	return send(buffer, length);
+
+}
+
 /** Sends the specified bytes over the connected network
  *
  * @param buffer The bytes to send

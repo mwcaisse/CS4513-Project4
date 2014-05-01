@@ -95,6 +95,15 @@ public:
 
 	int close();
 
+	/** Sends the specified message over the network
+	 *  @param op The message Operation
+	 *  @param objectType the object type of the message
+	 *  @param the data in the message
+	 *  @return The number of bytes sent, or -1 if error occurred
+	 */
+
+	int sendMessage(MessageOp op, std::string objectType, std::string data);
+
 	/** Sends the specified bytes over the connected network
 	 *
 	 * @param buffer The bytes to send
