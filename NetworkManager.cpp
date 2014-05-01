@@ -143,7 +143,8 @@ int NetworkManager::close() {
 /** Sends the specified message over the network
 	 *  @param op The message Operation
 	 *  @param objectType the object type of the message
-	 *  @param the data in the message
+	 *  @param misc The option field of the header
+	 *  @param body the message body
 	 *  @return The number of bytes sent, or -1 if error occurred
 	 */
 
