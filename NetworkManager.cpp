@@ -21,7 +21,7 @@
 #include "NetworkManager.h"
 #include "EventNetwork.h"
 
-NetworkManager* NetworkManager::_instance = NULL;
+NetworkManager NetworkManager::_instance;
 
 NetworkManager::NetworkManager() {
 	//create a new network manager
@@ -29,10 +29,7 @@ NetworkManager::NetworkManager() {
 }
 
 /** Returns the singleton instance of the NetworkManager */
-NetworkManager* NetworkManager::getInstance() {
-	if (!_instance) {
-		_instance = new NetworkManager();
-	}
+NetworkManager& NetworkManager::getInstance() {
 	return _instance;
 }
 

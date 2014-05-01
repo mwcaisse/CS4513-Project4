@@ -42,7 +42,8 @@ private:
 	/** The socket descriptor for the socket */
 	int sock;
 
-	static NetworkManager* _instance;
+	/** The singleton instance */
+	static NetworkManager _instance;
 
 	/** Creates the server socket for listening for new clients
 	 *
@@ -81,7 +82,7 @@ private:
 public:
 
 	/** Returns the singleton instance of the NetworkManager */
-	static NetworkManager* getInstance();
+	static NetworkManager& getInstance();
 
 	/** Starts the network manager
 	 *
