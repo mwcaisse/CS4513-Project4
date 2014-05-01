@@ -11,11 +11,9 @@
 #include "include/Event.h"
 #include "NetworkManager.h"
 
+#define NETWORK_EVENT "__network_event__"
+
 class EventNetwork: public Event {
-
-public:
-
-	enum MessageOp {CREATE, UPDATE, DELETE, KEYSTK };
 
 
 private:
@@ -85,13 +83,6 @@ public:
 	 */
 
 	void setData(std::string data);
-
-	/** Converts the integer operation from the message header, into a MessageOp
-	 *
-	 */
-
-	MessageOp parseMessageOp(int op);
-
 
 };
 

@@ -14,11 +14,7 @@
 
 #define OBJECT_TYPE_LEN 100
 
-#define MSG_OP_CREATE 1
-#define MSG_OP_UPDATE 2
-#define MSG_OP_DELETE 3
-#define MSG_OP_KEYSTK 4
-
+enum MessageOp {CREATE = 0, UPDATE = 1, DELETE = 2, KEYSTK = 3};
 
 struct _network_message_header {
 	int op; // The operation this message is performing
@@ -43,10 +39,22 @@ private:
 	/** The socket descriptor for the socket */
 	int sock;
 
+	static NetworkManager* _instance;
+
+	/** Creates the server socket for listening for new clients
+	 *
+	 * @param port The port to create the server socket on
+	 * @return 0 if sucessful -1 if error
+	 */
+
+	int createServerSocket(std::string port);
+
+	void createClientSocket();
+
 public:
 
 	/** Returns the singleton instance of the NetworkManager */
-	static NetworkManager &getInstance();
+	static NetworkManager* getInstance();
 
 	/** Starts the network manager
 	 *

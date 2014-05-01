@@ -22,10 +22,8 @@ EventNetwork::EventNetwork(message_header header, std::string data) {
 	setData(data);
 	setObjectType(header.object_type);
 	setLength(header.len);
-	setOperation(parseMessageOp(header.op));
+	setOperation((MessageOp)header.op);
 }
-
-
 
 /** Returns the length of the data stored
  *
@@ -39,7 +37,7 @@ int EventNetwork::getLength() {
  *
  */
 
-EventNetwork::MessageOp EventNetwork::getOperation() {
+MessageOp EventNetwork::getOperation() {
 	return operation;
 }
 
@@ -91,15 +89,3 @@ void EventNetwork::setData(std::string data) {
 	this->data = data;
 }
 
-/** Converts the integer operation from the message header, into a MessageOp
- *
- */
-
-EventNetwork::MessageOp EventNetwork::parseMessageOp(int op) {
-	switch (op) {
-	case MSG_OP_CREATE: return CREATE;
-	case MSG_OP_UPDATE: return UPDATE;
-	case MSG_OP_DELETE: return DELETE;
-	case MSG_OP_KEYSTK: return KEYSTK;
-	}
-}
