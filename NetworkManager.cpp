@@ -181,19 +181,21 @@ int NetworkManager::send(void* buffer, int bytes) {
 	return ::send(sock, buffer, bytes, 0);
 }
 
-/** Receives a message from the network
- * 	@return NetworkEvent representing the message received, NULL if there was an error,
- * 		or no message available
+/** Retrieves a message from the network, will return the message in EventNetwork form
+ * 		if a message exists. Will not do anything if a message isn't available
+ *
+ * 	@return The EventNetwork representing the message, NULL if no message available,
+ * 		or an error occurred.
  */
 
 EventNetwork* NetworkManager::recvMessage() {
-	if (!isData()) {
-		return NULL;
+	if (!isMessage()) {
+		return NULL; // no message available, return
 	}
 
 	//the message header
 	message_header header;
-	int read = recv(&header, sizeof(header));
+	int read = recv(&header, sizeof(header), false);
 
 	if (read != sizeof(header)) {
 		return NULL; // error header was not the right size
@@ -203,7 +205,7 @@ EventNetwork* NetworkManager::recvMessage() {
 
 	char buffer[dataLength];
 
-	read = recv(buffer, dataLength);
+	read = recv(buffer, dataLength, false);
 
 	if (read == -1) {
 		//error occurred while reading the message body
@@ -220,11 +222,19 @@ EventNetwork* NetworkManager::recvMessage() {
  *
  * @param buffer The buffer to copy the data into
  * @param bytes The maximum number of bytes to read
+ * @param peek If true will just peek at the data available.
  * @return The number of bytes read, -1 if an error occurred
  */
 
-int NetworkManager::recv(void* buffer, int bytes) {
-	return ::recv(sock, buffer, bytes, MSG_WAITALL);
+int NetworkManager::recv(void* buffer, int bytes, bool peek) {
+
+	int flag = 0;
+
+	if (peek) { //if peek, set the peek flag
+		flag = MSG_PEEK;
+	}
+
+	return ::recv(sock, buffer, bytes, flag);
 }
 
 /** Checks the amount of data currently available on the network
@@ -244,6 +254,31 @@ int NetworkManager::isData() {
 	}
 
 	return bytes;
+}
+
+/** Determines if a full message (header + body) is available to be read from the network
+ * 	@return True if a message is available, false otherwise.
+ */
+
+bool NetworkManager::isMessage() {
+	int size = sizeof(message_header);
+	if (isData() < size) {
+		return false; // no message header available.
+	}
+	//message header is available, check if the full body is
+	message_header header;
+	int res = recv(&header, size, true); // peek at the header
+	if (res < 0) {
+		//recv failed, or isData lied?? the horror
+		return false;
+	}
+
+	//add the body length to the header
+	size += header.len;
+
+	//check if the data available contains the body
+	return isData() < size;
+
 }
 
 /** Whether or not the network is currently connected

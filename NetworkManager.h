@@ -66,10 +66,11 @@ private:
 	 *
 	 * @param buffer The buffer to copy the data into
 	 * @param bytes The maximum number of bytes to read
+	 * @param peek If true will just peek at the data available.
 	 * @return The number of bytes read, -1 if an error occurred
 	 */
 
-	int recv(void* buffer, int bytes);
+	int recv(void* buffer, int bytes, bool peek);
 
 public:
 
@@ -124,9 +125,11 @@ public:
 
 	int sendMessage(MessageOp op, std::string objectType, std::string data);
 
-	/** Receives a message from the network
-	 * 	@return NetworkEvent representing the message received, NULL if there was an error,
-	 * 		or no message available
+	/** Retrieves a message from the network, will return the message in EventNetwork form
+	 * 		if a message exists. Will not do anything if a message isn't available
+	 *
+	 * 	@return The EventNetwork representing the message, NULL if no message available,
+	 * 		or an error occurred.
 	 */
 
 	EventNetwork* recvMessage();
@@ -136,6 +139,12 @@ public:
 	 */
 
 	int isData();
+
+	/** Determines if a full message (header + body) is available to be read from the network
+	 * 	@return True if a message is available, false otherwise.
+	 */
+
+	bool isMessage();
 
 	/** Whether or not the network is currently connected
 	 *
