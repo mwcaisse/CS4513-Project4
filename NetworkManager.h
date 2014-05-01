@@ -72,6 +72,12 @@ private:
 
 	int recv(void* buffer, int bytes, bool peek);
 
+	/** Checks the amount of data currently available on the network
+	 * 	@return The number of bytes available, -1 if network is not connected or error
+	 */
+
+	int isData();
+
 public:
 
 	/** Returns the singleton instance of the NetworkManager */
@@ -133,12 +139,6 @@ public:
 	 */
 
 	EventNetwork* recvMessage();
-
-	/** Checks the amount of data currently available on the network
-	 * 	@return The number of bytes available, -1 if network is not connected or error
-	 */
-
-	int isData();
 
 	/** Determines if a full message (header + body) is available to be read from the network
 	 * 	@return True if a message is available, false otherwise.
