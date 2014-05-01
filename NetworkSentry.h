@@ -16,6 +16,13 @@ class NetworkSentry: public Object {
 public:
 	NetworkSentry();
 	virtual ~NetworkSentry();
+
+	/** Step event, checks the network manager to see if any messages are available,
+	 * 		if there are messages available notifies everyone interested in network events
+	 *
+	 */
+
+	void step();
 };
 
 #endif /* NETWORKSENTRY_H_ */
