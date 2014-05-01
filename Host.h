@@ -19,11 +19,10 @@ public:
 
 	virtual ~Host();
 
-	/** Handles the network events
-	 *
+	/** Handles all events
 	 */
 
-	int eventHandler(Event* event);
+	int eventHandler(Event* ev_p);
 
 };
 

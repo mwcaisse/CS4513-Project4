@@ -126,11 +126,22 @@ public:
 	/** Sends the specified message over the network
 	 *  @param op The message Operation
 	 *  @param objectType the object type of the message
-	 *  @param the data in the message
+	 *  @param misc The misc int in the header
+	 *  @param body The message body
 	 *  @return The number of bytes sent, or -1 if error occurred
 	 */
 
-	int sendMessage(MessageOp op, std::string objectType, std::string data);
+	int sendMessage(MessageOp op, std::string objectType, int misc, std::string body);
+
+	/** Sends the specified message over the network
+	 *
+	 *	@param op The message Operation
+	 *	@param objectType The object type of the message
+	 *	@param misc The misc field
+	 *	@return The number of bytes sent, or -1 if error occurred
+	 */
+
+	int sendMessage(MessageOp op, std::string objectType, int misc);
 
 	/** Retrieves a message from the network, will return the message in EventNetwork form
 	 * 		if a message exists. Will not do anything if a message isn't available

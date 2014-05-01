@@ -38,7 +38,8 @@ NetworkManager& NetworkManager::getInstance() {
  */
 
 int NetworkManager::startUp() {
-
+	sock = -1;
+	return 0;
 }
 
 /** Shuts down the network manager
@@ -146,24 +147,48 @@ int NetworkManager::close() {
 	 *  @return The number of bytes sent, or -1 if error occurred
 	 */
 
-int NetworkManager::sendMessage(MessageOp op, std::string objectType, std::string data) {
+int NetworkManager::sendMessage(MessageOp op, std::string objectType, int misc, std::string body) {
 	if (objectType.length() >= OBJECT_TYPE_LEN) {
 		return -1;
 	}
 
 	message_header header;
 	header.op = op;
-	header.len = data.length() + 1; // + 1 for null terminator
+	header.len = body.length() + 1; // + 1 for null terminator
+	header.misc = misc;
 	strncpy(header.object_type, objectType.c_str(), OBJECT_TYPE_LEN);
 
-	int length = data.length() + sizeof(header);
-	char buffer[length + 1];
+	int length = body.length() + sizeof(header) + 1; //for string null terminator
+	char buffer[length];
 
 	memcpy(buffer, (void*) &header, sizeof(header));
-	memcpy(buffer + sizeof(header), data.c_str(), data.length() + 1);
+	memcpy(buffer + sizeof(header), body.c_str(), body.length() + 1);
 
 	return send(buffer, length);
 
+}
+
+/** Sends the specified message over the network
+ *
+ *	@param op The message Operation
+ *	@param objectType The object type of the message
+ *	@param misc The misc field
+ *	@return The number of bytes sent, or -1 if error occurred
+ */
+
+int NetworkManager::sendMessage(MessageOp op, std::string objectType, int misc) {
+	if (objectType.length() >= OBJECT_TYPE_LEN) {
+		return -1;
+	}
+
+	message_header header;
+	header.op = op;
+	header.len = 0; // no message size
+	header.misc = misc;
+	strncpy(header.object_type, objectType.c_str(), OBJECT_TYPE_LEN);
+
+
+	return send((void*) &header, sizeof(header));
 }
 
 /** Sends the specified bytes over the connected network

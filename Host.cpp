@@ -26,7 +26,7 @@ Host::~Host() {
  *	@return 0 if ignored, 1 otherwise
  */
 
-int eventHandler(Event* ev_p) {
+int Host::eventHandler(Event* ev_p) {
 	if (ev_p->getType() == NETWORK_EVENT) {
 
 		//cast it into a network event

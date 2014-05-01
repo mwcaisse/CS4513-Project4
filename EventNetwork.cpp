@@ -8,10 +8,6 @@
 #include "EventNetwork.h"
 #include "NetworkManager.h"
 
-EventNetwork::EventNetwork() {
-	//woo nothing to do here folks
-
-}
 
 EventNetwork::~EventNetwork() {
 	// TODO Auto-generated destructor stub
