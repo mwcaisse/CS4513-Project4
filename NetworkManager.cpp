@@ -251,7 +251,7 @@ int NetworkManager::isData() {
  */
 
 bool NetworkManager::isConnected() {
-	return sock != -1;
+	return sock > 0;
 }
 
 /** Returns the socket used for the network connection

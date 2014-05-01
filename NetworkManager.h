@@ -13,14 +13,15 @@
 
 #define DRAGONFLY_PORT "9876"
 
-#define OBJECT_TYPE_LEN 100
+#define OBJECT_TYPE_LEN 20
 
 enum MessageOp {CREATE = 0, UPDATE = 1, DELETE = 2, KEYSTK = 3};
 
 struct _network_message_header {
 	int op; // The operation this message is performing
 	int len; // the length of the message
-	char object_type[OBJECT_TYPE_LEN]; // the object type
+	int object_id; // the id of the object, if applicable
+	char object_type[OBJECT_TYPE_LEN]; // the object type, if applicable
 };
 
 typedef struct _network_message_header message_header;

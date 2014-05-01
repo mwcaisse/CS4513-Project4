@@ -24,6 +24,8 @@ private:
 	MessageOp operation;
 	/** The type of object if applicable */
 	std::string objectType;
+	/** The id of the object, if applicable */
+	int objectId;
 	/** The data contained in the message */
 	std::string data;
 
@@ -54,6 +56,12 @@ public:
 
 	std::string getObjectType();
 
+	/** Returns the object id
+	 *
+	 */
+
+	int getObjectId();
+
 	/** Returns the data of the message
 	 *
 	 */
@@ -77,6 +85,12 @@ public:
 	 */
 
 	void setObjectType(std::string type);
+
+	/** Sets the object id to the specified id
+	 *
+	 */
+
+	void setObjectId(int id);
 
 	/** Sets the network data to the specified data
 	 *

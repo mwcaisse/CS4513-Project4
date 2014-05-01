@@ -9,7 +9,7 @@
 #include "NetworkManager.h"
 
 EventNetwork::EventNetwork() {
-	//woo noething to do here folks
+	//woo nothing to do here folks
 
 }
 
@@ -21,6 +21,7 @@ EventNetwork::~EventNetwork() {
 EventNetwork::EventNetwork(message_header header, std::string data) {
 	setData(data);
 	setObjectType(header.object_type);
+	setObjectId(header.object_id);
 	setLength(header.len);
 	setOperation((MessageOp)header.op);
 }
@@ -47,6 +48,14 @@ MessageOp EventNetwork::getOperation() {
 
 std::string EventNetwork::getObjectType() {
 	return objectType;
+}
+
+/** Returns the object id
+ *
+ */
+
+int EventNetwork::getObjectId() {
+	return objectId;
 }
 
 /** Returns the data of the message
@@ -79,6 +88,14 @@ void EventNetwork::setOperation(MessageOp op) {
 
 void EventNetwork::setObjectType(std::string type) {
 	this->objectType = type;
+}
+
+/** Sets the objectId to the specified id
+ *
+ */
+
+void EventNetwork::setObjectId(int objectId) {
+	this->objectId = objectId;
 }
 
 /** Sets the network data to the specified data
