@@ -16,6 +16,7 @@
 #include <sys/socket.h>
 #include <netdb.h>
 #include <netinet/in.h>
+#include <sys/ioctl.h>
 
 #include "NetworkManager.h"
 #include "EventNetwork.h"
@@ -41,7 +42,7 @@ NetworkManager* NetworkManager::getInstance() {
  */
 
 int NetworkManager::startUp() {
-	//do some start up stuff
+
 }
 
 /** Shuts down the network manager
@@ -49,7 +50,9 @@ int NetworkManager::startUp() {
  */
 
 void NetworkManager::shutDown() {
-	//TODO;
+	if (isConnected()) {
+		close();
+	}
 }
 
 /** Checks to make sure the event type is valid
@@ -149,8 +152,7 @@ int NetworkManager::close() {
  */
 
 int NetworkManager::send(void* buffer, int bytes) {
-	//TODO;
-	return 1;
+	return ::send(sock, buffer, bytes, 0);
 }
 
 /** Reads up to the specified number of bytes into the buffer
@@ -161,8 +163,7 @@ int NetworkManager::send(void* buffer, int bytes) {
  */
 
 int NetworkManager::recv(void* buffer, int bytes) {
-	//TODO;
-	return 1;
+	return ::recv(sock, buffer, bytes, 0);
 }
 
 /** Checks the amount of data currently available on the network
@@ -170,8 +171,18 @@ int NetworkManager::recv(void* buffer, int bytes) {
  */
 
 int NetworkManager::isData() {
-	//TODO;
-	return 0;
+	if (!isConnected()) {
+		return -1; // we are not connected return failure
+	}
+
+	int bytes;
+	int res = ioctl(sock, FIONREAD, &bytes);
+
+	if (res == -1) {
+		return res;
+	}
+
+	return bytes;
 }
 
 /** Whether or not the network is currently connected
