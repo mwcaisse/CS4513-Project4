@@ -8,7 +8,7 @@
 #ifndef EVENTNETWORK_H_
 #define EVENTNETWORK_H_
 
-#include "include/Event.h"
+#include "Event.h"
 #include "NetworkManager.h"
 
 #define NETWORK_EVENT "__network_event__"

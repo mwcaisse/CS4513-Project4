@@ -23,7 +23,6 @@
 
 NetworkManager* NetworkManager::_instance = NULL;
 
-
 NetworkManager::NetworkManager() {
 	//create a new network manager
 	sock = -1;
@@ -182,6 +181,41 @@ int NetworkManager::send(void* buffer, int bytes) {
 	return ::send(sock, buffer, bytes, 0);
 }
 
+/** Receives a message from the network
+ * 	@return NetworkEvent representing the message received, NULL if there was an error,
+ * 		or no message available
+ */
+
+EventNetwork* NetworkManager::recvMessage() {
+	if (!isData()) {
+		return NULL;
+	}
+
+	//the message header
+	message_header header;
+	int read = recv(&header, sizeof(header));
+
+	if (read != sizeof(header)) {
+		return NULL; // error header was not the right size
+	}
+
+	int dataLength = header.len;
+
+	char buffer[dataLength];
+
+	read = recv(buffer, dataLength);
+
+	if (read == -1) {
+		//error occurred while reading the message body
+		return NULL;
+	}
+
+	std::string body = buffer;
+
+	return new EventNetwork(header, body);
+
+}
+
 /** Reads up to the specified number of bytes into the buffer
  *
  * @param buffer The buffer to copy the data into
@@ -190,7 +224,7 @@ int NetworkManager::send(void* buffer, int bytes) {
  */
 
 int NetworkManager::recv(void* buffer, int bytes) {
-	return ::recv(sock, buffer, bytes, 0);
+	return ::recv(sock, buffer, bytes, MSG_WAITALL);
 }
 
 /** Checks the amount of data currently available on the network

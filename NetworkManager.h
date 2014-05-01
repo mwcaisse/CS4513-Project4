@@ -10,6 +10,7 @@
 
 #include "Manager.h"
 
+
 #define DRAGONFLY_PORT "9876"
 
 #define OBJECT_TYPE_LEN 100
@@ -24,6 +25,7 @@ struct _network_message_header {
 
 typedef struct _network_message_header message_header;
 
+class EventNetwork;
 
 class NetworkManager : public Manager {
 
@@ -49,7 +51,24 @@ private:
 
 	int createServerSocket(std::string port);
 
-	void createClientSocket();
+	/** Sends the specified bytes over the connected network
+	 *
+	 * @param buffer The bytes to send
+	 * @param bytes The number of bytes to send
+	 * @return The number of bytes sent or -1 if error occurred
+	 *
+	 */
+
+	int send(void* buffer, int bytes);
+
+	/** Reads up to the specified number of bytes into the buffer
+	 *
+	 * @param buffer The buffer to copy the data into
+	 * @param bytes The maximum number of bytes to read
+	 * @return The number of bytes read, -1 if an error occurred
+	 */
+
+	int recv(void* buffer, int bytes);
 
 public:
 
@@ -104,24 +123,12 @@ public:
 
 	int sendMessage(MessageOp op, std::string objectType, std::string data);
 
-	/** Sends the specified bytes over the connected network
-	 *
-	 * @param buffer The bytes to send
-	 * @param bytes The number of bytes to send
-	 * @return The number of bytes sent or -1 if error occurred
-	 *
+	/** Receives a message from the network
+	 * 	@return NetworkEvent representing the message received, NULL if there was an error,
+	 * 		or no message available
 	 */
 
-	int send(void* buffer, int bytes);
-
-	/** Reads up to the specified number of bytes into the buffer
-	 *
-	 * @param buffer The buffer to copy the data into
-	 * @param bytes The maximum number of bytes to read
-	 * @return The number of bytes read, -1 if an error occurred
-	 */
-
-	int recv(void* buffer, int bytes);
+	EventNetwork* recvMessage();
 
 	/** Checks the amount of data currently available on the network
 	 * 	@return The number of bytes available, -1 if network is not connected or error
