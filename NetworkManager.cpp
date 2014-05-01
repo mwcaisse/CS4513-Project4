@@ -94,8 +94,38 @@ int NetworkManager::accept(std::string port) {
  */
 
 int NetworkManager::connect(std::string host, std::string port) {
-	//TODO;
-	return 1;
+	struct addrinfo hints;
+	struct addrinfo* host_info;
+
+	memset(&hints, 0, sizeof(hints));
+
+	hints.ai_family = AF_INET;
+	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_flags = AI_PASSIVE;
+
+	int res = getaddrinfo(host.c_str(), port.c_str(), &hints, &host_info);
+
+	if (res) {
+		//failed to get address information
+		return -1;
+	}
+
+	sock = socket(host_info->ai_family, host_info->ai_socktype, host_info->ai_protocol);
+
+	if (sock == -1) {
+		//failed to create the socket
+		return -1;
+	}
+
+	res = ::connect(sock, host_info->ai_addr, host_info->ai_addrlen);
+
+	if (res == -1) {
+		//failed to connect
+		return -1;
+	}
+
+	//woo completed successfully, return success
+	return 0;
 }
 
 /** Close the network connection
