@@ -13,6 +13,20 @@
 
 class Host: public Object {
 
+private:
+
+	/** Handles network events
+	 * 	@param event A pointer to the network event
+	 */
+
+	void networkHandle(EventNetwork* event);
+
+	/** Handles step events
+	 *  @param event A pointer to the step event
+	 */
+
+	void stepHandle(EventStep* event);
+
 public:
 
 	Host();

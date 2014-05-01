@@ -28,27 +28,37 @@ Host::~Host() {
 
 int Host::eventHandler(Event* ev_p) {
 	if (ev_p->getType() == NETWORK_EVENT) {
-
-		//cast it into a network event
-		EventNetwork* event = (EventNetwork) ev_p;
-
-		if (event->getOperation() ==  KEYSTK) {
-			//this was a keystroke, otherwise host doesn't do anything
-			int key = event->getMiscInt();
-
-			//TODO: send this to our client host.
-
-		}
-
+		networkHandle((EventNetwork*) ev_p);
 		return 1; // processed
 	}
 	else if (ev_p->getType() == STEP_EVENT) {
-		//we have a step event
-		//check all synchronizable game objects.
-
+		stepHandle((EventStep*) ev_p);
 		return 1;
 	}
 
 	return 0; // ignored
+}
+
+/** Handles network events
+ * 	@param event A pointer to the network event
+ */
+
+void Host::networkHandle(EventNetwork* event) {
+	if (event->getOperation() ==  KEYSTK) {
+		//this was a keystroke, otherwise host doesn't do anything
+		int key = event->getMiscInt();
+
+		LogManager &log_manager = LogManager::getInstance();
+		log_manager.writeLog("Host::networkhandle: received a keystroke from the client: %d", key);
+
+	}
+}
+
+/** Handles step events
+ *  @param event A pointer to the step event
+ */
+
+void Host::stepHandle(EventStep* event) {
+
 }
 
