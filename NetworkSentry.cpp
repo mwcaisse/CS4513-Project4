@@ -31,8 +31,10 @@ void NetworkSentry::step() {
 	while (manager.isMessage()) {
 		//we have a message, retrieve the message
 		EventNetwork* event = manager.recvMessage();
-		//notify all interested
-		manager.onEvent(event);
+		if (event) {
+			//notify all interested
+			manager.onEvent(event);
+		}
 	}
 
 }
