@@ -29,7 +29,10 @@ GAMESRC= Saucer.cpp \
          Hero.cpp \
          NetworkManager.cpp \
          EventNetwork.cpp \
-         NetworkSentry.cpp
+         NetworkSentry.cpp \
+         Host.cpp \
+         Client.cpp
+         
 GAME= game.cpp
 EXECUTABLE= game		
 OBJECTS= $(GAMESRC:.cpp=.o)

@@ -10,6 +10,10 @@
 
 #include "include/Object.h"
 
+#include "EventNetwork.h"
+#include "EventStep.h"
+#include "EventKeyboard.h"
+
 
 
 class Client: public Object {

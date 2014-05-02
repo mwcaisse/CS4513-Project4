@@ -9,7 +9,9 @@
 #define HOST_H_
 
 #include "include/Object.h"
-
+#include "EventStep.h"
+#include "EventNetwork.h"
+#include "EventStep.h"
 
 class Host: public Object {
 

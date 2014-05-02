@@ -10,6 +10,7 @@
 #include "EventNetwork.h"
 #include "EventStep.h"
 #include "EventKeyboard.h"
+#include "LogManager.h"
 
 Client::Client() {
 	NetworkManager::getInstance().registerInterest(this, NETWORK_EVENT);
@@ -53,9 +54,14 @@ void Client::networkHandle(EventNetwork* event) {
 	switch (event->getOperation()) {
 
 	case CREATE:
+
+		break;
 	case UPDATE:
+
+		break;
 	case DELETE:
 
+		break;
 
 	}
 

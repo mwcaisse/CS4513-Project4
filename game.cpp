@@ -74,6 +74,8 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
+  //lets start the network?
+
   // Show splash screen
   splash();
 

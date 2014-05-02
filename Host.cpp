@@ -7,6 +7,7 @@
 
 #include "Host.h"
 
+#include "LogManager.h"
 #include "NetworkManager.h"
 #include "EventNetwork.h"
 #include "EventStep.h"
