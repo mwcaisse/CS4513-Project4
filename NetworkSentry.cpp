@@ -43,7 +43,7 @@ void NetworkSentry::step() {
 
 	//int data = manager.isData();
 	//get all of the messages from the network manager
-	if (manager.isMessage()) {
+	while (manager.isMessage()) {
 		//we have a message, retrieve the message
 		EventNetwork* event = manager.recvMessage();
 		if (event) {

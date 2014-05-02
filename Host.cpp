@@ -63,7 +63,7 @@ void Host::networkHandle(EventNetwork* event) {
  */
 
 void Host::stepHandle(EventStep* event) {
-	WorldManager& worldManager = WorldManager::getInstance();
+	/*WorldManager& worldManager = WorldManager::getInstance();
 	NetworkManager& networkManager = NetworkManager::getInstance();
 
 	ObjectList objectList = worldManager.getAllObjects();
@@ -81,7 +81,7 @@ void Host::stepHandle(EventStep* event) {
 		}
 
 		objectItr->next();
-	}
+	}/*
 
 
 }
