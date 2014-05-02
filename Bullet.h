@@ -13,6 +13,8 @@ class Bullet : public Object {
 
  public:
   Bullet(Position hero_pos);
+  //Creates a new bullet from the serialized string
+  Bullet(std::string serialized);
   int eventHandler(Event *p_e);
 };
 

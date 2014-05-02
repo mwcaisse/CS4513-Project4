@@ -38,6 +38,12 @@ private:
 
 	void stepHandle(EventStep* event);
 
+	void createObject(EventNetwork* event);
+
+	void updateObject(EventNetwork* event);
+
+	void deleteObject(EventNetwork* event);
+
 public:
 
 	Client();

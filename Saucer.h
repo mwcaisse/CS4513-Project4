@@ -14,6 +14,8 @@ class Saucer : public Object {
 
  public:
   Saucer();
+  //creates a saucer from the serialized string
+  Saucer(std::string serialized);
   ~Saucer();
   int eventHandler(Event *p_e);
 };

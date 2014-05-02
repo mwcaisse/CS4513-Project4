@@ -11,6 +11,9 @@
 #include "EventStep.h"
 #include "EventKeyboard.h"
 #include "LogManager.h"
+#include "Bullet.h"
+#include "Saucer.h"
+#include "WorldManager.h"
 
 Client::Client() {
 	NetworkManager::getInstance().registerInterest(this, NETWORK_EVENT);
@@ -65,6 +68,29 @@ void Client::networkHandle(EventNetwork* event) {
 
 	}
 
+}
+
+void Client::createObject(EventNetwork* event) {
+	if (event->getObjectType() == "Bullet") {
+		new Bullet(event->getData());
+	}
+	else if (event->getObjectType() == "Saucer") {
+		new Saucer(event->getData());
+	}
+}
+
+void Client::updateObject(EventNetwork* event) {
+	int id = event->getMiscInt();
+	WorldManager& worldManager = WorldManager::getInstance();
+	Object* toUpdate = worldManager.objectWithId(id);
+	toUpdate->deserialize(event->getData());
+}
+
+void Client::deleteObject(EventNetwork* event) {
+	int id = event->getMiscInt();
+	WorldManager& worldManager = WorldManager::getInstance();
+	Object* toDelete = worldManager.objectWithId(id);
+	worldManager.markForDelete(toDelete);
 }
 
 /** Handles keyboard events
