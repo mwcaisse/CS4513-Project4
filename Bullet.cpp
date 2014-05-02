@@ -37,7 +37,7 @@ Bullet::Bullet(Position hero_pos) {
   setPosition(pos);
 
   if (HostStatus::isHost()) {
- 	  if (NetworkManager::getInstance().sendMessage(CREATE, getType(), getId(), serialize())) {
+ 	  if (NetworkManager::getInstance().sendCreateMessage(this)) {
  		  LogManager& logger = LogManager::getInstance();
  		  logger.writeLog("Bullet::Bullet(): Unable to send create message to client");
  	  }

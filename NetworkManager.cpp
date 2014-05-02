@@ -158,15 +158,27 @@ int NetworkManager::sendMessage(MessageOp op, std::string objectType, int misc, 
 
 	message_header header;
 	header.op = op;
-	header.len = body.length() + 1; // + 1 for null terminator
+
+	//set the body length
+	if (body.length() == 0) {
+		header.len = 0; // 0 if body is ""
+	}
+	else {
+		header.len = body.length() + 1; // + 1 for null terminator
+	}
+
 	header.misc = misc;
 	strncpy(header.object_type, objectType.c_str(), OBJECT_TYPE_LEN);
 
-	int length = body.length() + sizeof(header) + 1; //for string null terminator
+	//set the length, header length + body length
+	int length = sizeof(header) + header.len; //for string null terminator
 	char buffer[length];
 
 	memcpy(buffer, (void*) &header, sizeof(header));
-	memcpy(buffer + sizeof(header), body.c_str(), body.length() + 1);
+	//check if this message has a body, if so append
+	if (body.length() > 0) {
+		memcpy(buffer + sizeof(header), body.c_str(), body.length() + 1);
+	}
 
 	return send(buffer, length);
 
@@ -181,18 +193,23 @@ int NetworkManager::sendMessage(MessageOp op, std::string objectType, int misc, 
  */
 
 int NetworkManager::sendMessage(MessageOp op, std::string objectType, int misc) {
-	if (objectType.length() >= OBJECT_TYPE_LEN) {
-		return -1;
-	}
+	return sendMessage(op, objectType, misc, "");
+}
 
-	message_header header;
-	header.op = op;
-	header.len = 0; // no message size
-	header.misc = misc;
-	strncpy(header.object_type, objectType.c_str(), OBJECT_TYPE_LEN);
+int NetworkManager::sendCreateMessage(Object* obj) {
+	return sendMessage(CREATE, obj->getType(), obj->getId(), obj->serialize());
+}
 
+int NetworkManager::sendUpdateMessage(Object* obj) {
+	return sendMessage(UPDATE, obj->getType(), obj->getId(), obj->serialize());
+}
 
-	return send((void*) &header, sizeof(header));
+int NetworkManager::sendDeleteMessage(Object* obj) {
+	return sendMessage(DELETE, obj->getType(), obj->getId());
+}
+
+int NetworkManager::sendKeyMessage(int key) {
+	return sendMessage(KEYSTK, "", key);
 }
 
 /** Sends the specified bytes over the connected network

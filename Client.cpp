@@ -105,7 +105,7 @@ void Client::keyboardHandle(EventKeyboard* event) {
 
 	//send the key event to the host
 	NetworkManager& networkManager = NetworkManager::getInstance();
-	int res = networkManager.sendMessage(KEYSTK, "", key);
+	int res = networkManager.sendKeyMessage(key);
 
 	//check for success
 	if (res < 0) {

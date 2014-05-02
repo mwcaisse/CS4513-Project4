@@ -77,6 +77,26 @@ private:
 
 	int recv(void* buffer, int bytes, bool peek);
 
+	/** Sends the specified message over the network
+	 *  @param op The message Operation
+	 *  @param objectType the object type of the message
+	 *  @param misc The misc int in the header
+	 *  @param body The message body
+	 *  @return The number of bytes sent, or -1 if error occurred
+	 */
+
+	int sendMessage(MessageOp op, std::string objectType, int misc, std::string body);
+
+	/** Sends the specified message over the network
+	 *
+	 *	@param op The message Operation
+	 *	@param objectType The object type of the message
+	 *	@param misc The misc field
+	 *	@return The number of bytes sent, or -1 if error occurred
+	 */
+
+	int sendMessage(MessageOp op, std::string objectType, int misc);
+
 public:
 
 	/** Returns the singleton instance of the NetworkManager */
@@ -121,25 +141,13 @@ public:
 
 	int close();
 
-	/** Sends the specified message over the network
-	 *  @param op The message Operation
-	 *  @param objectType the object type of the message
-	 *  @param misc The misc int in the header
-	 *  @param body The message body
-	 *  @return The number of bytes sent, or -1 if error occurred
-	 */
+	int sendCreateMessage(Object* obj);
 
-	int sendMessage(MessageOp op, std::string objectType, int misc, std::string body);
+	int sendUpdateMessage(Object* obj);
 
-	/** Sends the specified message over the network
-	 *
-	 *	@param op The message Operation
-	 *	@param objectType The object type of the message
-	 *	@param misc The misc field
-	 *	@return The number of bytes sent, or -1 if error occurred
-	 */
+	int sendDeleteMessage(Object* obj);
 
-	int sendMessage(MessageOp op, std::string objectType, int misc);
+	int sendKeyMessage(int key);
 
 	/** Retrieves a message from the network, will return the message in EventNetwork form
 	 * 		if a message exists. Will not do anything if a message isn't available

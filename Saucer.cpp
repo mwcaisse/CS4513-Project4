@@ -50,7 +50,7 @@ Saucer::Saucer() {
   registerInterest(NUKE_EVENT);
 
   if (HostStatus::isHost()) {
-	  if (NetworkManager::getInstance().sendMessage(CREATE, getType(), getId(), serialize())) {
+	  if (NetworkManager::getInstance().NetworkManager::getInstance().sendCreateMessage(this)) {
 		  LogManager& logger = LogManager::getInstance();
 		  logger.writeLog("Saucer::Saucer(): Unable to send create message to client");
 	  }
