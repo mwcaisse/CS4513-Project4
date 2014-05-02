@@ -81,7 +81,7 @@ void Host::stepHandle(EventStep* event) {
 		}
 
 		objectItr->next();
-	}/*
+	}*/
 
 
 }
