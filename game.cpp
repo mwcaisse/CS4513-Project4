@@ -153,9 +153,11 @@ void populateWorld(void) {
 	GameStart* gameStart = new GameStart();
 	gameStart->setId(GAME_START_ID);
 
-	// spawn some Stars
-	for (int i=0; i<16; i++)
-		new Star;
+	if (HostStatus::isHost()) {
+		// spawn some Stars
+		for (int i=0; i<16; i++)
+			new Star;
+	}
 
 
 }

@@ -15,6 +15,8 @@
 #include "Saucer.h"
 #include "WorldManager.h"
 #include "Hero.h"
+#include "Star.h"
+#include "Explosion.h"
 
 Client::Client() {
 	NetworkManager::getInstance().registerInterest(this, NETWORK_EVENT);
@@ -80,6 +82,12 @@ void Client::createObject(EventNetwork* event) {
 	}
 	else if (event->getObjectType() == "Hero") {
 		new Hero(event->getData());
+	}
+	else if (event->getObjectType() == "Star") {
+		new Star(event->getData());
+	}
+	else if (event->getObjectType() == "Explosion") {
+		new Explosion(event->getData());
 	}
 }
 
