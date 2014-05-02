@@ -40,6 +40,10 @@ int NetworkSentry::eventHandler(Event* ev_p) {
 void NetworkSentry::step() {
 	LogManager &logManager = LogManager::getInstance();
 	NetworkManager& manager = NetworkManager::getInstance();
+
+	int data = manager.isData();
+	logManager.writeLog("NetworkSentry::step() Data available: %d", data);
+
 	//get all of the messages from the network manager
 	while (manager.isMessage()) {
 		logManager.writeLog("NetworkSentry::step(): Message Available");

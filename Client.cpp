@@ -72,8 +72,12 @@ void Client::networkHandle(EventNetwork* event) {
  */
 
 void Client::keyboardHandle(EventKeyboard* event) {
+	LogManager &logManager = LogManager::getInstance();
+
 	//get the keyboard key pressed
 	int key = event->getKey();
+
+	logManager.writeLog("Client::keyboardHandle: Keyboard event, sending key %d to host", key);
 
 	//send the key event to the host
 	NetworkManager& networkManager = NetworkManager::getInstance();
@@ -81,8 +85,7 @@ void Client::keyboardHandle(EventKeyboard* event) {
 
 	//check for success
 	if (res < 0) {
-		LogManager &log_manager = LogManager::getInstance();
-		log_manager.writeLog("Client::keyboardHandle: Warning! Could not send key stroke to host");
+		logManager.writeLog("Client::keyboardHandle: Warning! Could not send key stroke to host");
 	}
 
 }

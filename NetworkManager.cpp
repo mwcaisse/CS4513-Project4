@@ -21,6 +21,7 @@
 #include "NetworkManager.h"
 #include "EventNetwork.h"
 #include "NetworkSentry.h"
+#include "LogManager.h"
 
 NetworkManager NetworkManager::_instance;
 
@@ -286,6 +287,7 @@ int NetworkManager::isData() {
  */
 
 bool NetworkManager::isMessage() {
+	LogManager& logManager = LogManager::getInstance();
 	int size = sizeof(message_header);
 	if (isData() < size) {
 		return false; // no message header available.
@@ -294,6 +296,7 @@ bool NetworkManager::isMessage() {
 	message_header header;
 	int res = recv(&header, size, true); // peek at the header
 	if (res < 0) {
+		logManager.writeLog("NetworkManager::isMessage(): Error, failed to read the header..");
 		//recv failed, or isData lied?? the horror
 		return false;
 	}
@@ -302,7 +305,7 @@ bool NetworkManager::isMessage() {
 	size += header.len;
 
 	//check if the data available contains the body
-	return isData() < size;
+	return size <= isData();
 
 }
 
