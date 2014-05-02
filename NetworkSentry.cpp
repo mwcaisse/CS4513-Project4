@@ -11,9 +11,10 @@
 #include "EventStep.h"
 #include "LogManager.h"
 
+
 NetworkSentry::NetworkSentry() {
 	registerInterest(STEP_EVENT);
-
+	setId(NETWORK_SENTRY_ID);
 }
 
 NetworkSentry::~NetworkSentry() {

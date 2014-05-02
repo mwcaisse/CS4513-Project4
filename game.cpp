@@ -21,6 +21,11 @@
 #include "Host.h"
 #include "HostStatus.h"
 
+
+#define GAME_START_ID (50000)
+//network sentry 50001
+//points         50002
+
 // Function prototypes
 void loadResources(void);
 void populateWorld(void);
@@ -143,12 +148,15 @@ void loadResources(void) {
 
 // populate world with some objects
 void populateWorld(void) {
+	//this should be the third argument, shoudln't have to sync.. but anyways.
+	// create the GameStart object
+	GameStart* gameStart = new GameStart();
+	gameStart->setId(GAME_START_ID);
 
-  // spawn some Stars
-  for (int i=0; i<16; i++) 
-    new Star;
+	// spawn some Stars
+	for (int i=0; i<16; i++)
+		new Star;
 
-  // create the GameStart object
-  new GameStart();
+
 }
 

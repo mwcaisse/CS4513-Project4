@@ -13,6 +13,7 @@ class Star : public Object {
 
  public:
   Star();
+  Star(std::string serialized);
   void draw(void);
   int eventHandler(Event *p_e);
 };

@@ -8,6 +8,9 @@
 #include "WorldManager.h"
 #include "EventOut.h"
 #include "GraphicsManager.h"
+#include "NetworkManager.h"
+#include "HostStatus.h"
+#include "LogManager.h"
 
 Star::Star() {
   setType("Star");
@@ -18,7 +21,19 @@ Star::Star() {
   Position pos(random()%world_manager.getBoundary().getHorizontal(),
 	       random()%world_manager.getBoundary().getVertical());
   setPosition(pos);
+
+  if (HostStatus::isHost()) {
+	 if (NetworkManager::getInstance().sendCreateMessage(this)) {
+		 LogManager::getInstance().writeLog("Star::Star(): Unable to send create message to client");
+	 }
+  }
+
 }
+
+Star::Star(std::string serialized) {
+	deserialize(serialized);
+}
+
 
 void Star::draw() {
   GraphicsManager &graphics_manager = GraphicsManager::getInstance();

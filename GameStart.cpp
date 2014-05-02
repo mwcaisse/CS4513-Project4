@@ -19,6 +19,8 @@
 #include "HostStatus.h"
 #include "Host.h"
 
+#define POINTS_ID (50002)
+
 GameStart::GameStart() {
   setType("GameStart");
 
@@ -82,7 +84,8 @@ void GameStart::start() {
 	}
 
   // setup heads-up display
-  new Points;			// points display
+  Points* points = new Points;			// points display
+  points->setId(POINTS_ID);
 
   /* TODO: no nukes right now
   ViewObject *p_vo = new ViewObject; // used for nuke count
