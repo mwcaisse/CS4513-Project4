@@ -9,9 +9,11 @@
 
 #include "LogManager.h"
 #include "NetworkManager.h"
+#include "WorldManager.h"
 #include "EventNetwork.h"
 #include "EventStep.h"
 #include "ClientHero.h"
+#include "ObjectListIterator.h"
 
 Host::Host() {
 	NetworkManager::getInstance().registerInterest(this, NETWORK_EVENT);
@@ -61,6 +63,26 @@ void Host::networkHandle(EventNetwork* event) {
  */
 
 void Host::stepHandle(EventStep* event) {
+	WorldManager& worldManager = WorldManager::getInstance();
+	NetworkManager& networkManager = NetworkManager::getInstance();
+
+	ObjectList objectList = worldManager.getAllObjects();
+	ObjectListIterator* objectItr = new ObjectListIterator(&objectList);
+
+	objectItr->first(); // set it to the first object
+
+	while (!objectItr->isDone()) {
+
+		Object* obj = objectItr->currentObject();
+
+		//if the object was modified, and it is a bullet or saucer
+		if ( obj->isModified() && (obj->getType() == "Bullet" || obj->getType() == "Saucer")) {
+			networkManager.sendUpdateMessage(obj);
+		}
+
+		objectItr->next();
+	}
+
 
 }
 
