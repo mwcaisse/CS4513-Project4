@@ -2,6 +2,8 @@
 // game.cpp
 // 
 
+#include <unistd.h>
+
 // Engine includes
 #include "GameManager.h"
 #include "LogManager.h"
@@ -18,8 +20,51 @@
 void loadResources(void);
 void populateWorld(void);
 
+int print_usage() {
+	printf("Usage: \n");
+	printf("\t game -h hostaddress -p port \n");
+	printf("\t game -p port \n");
+}
+
 int main(int argc, char *argv[]) {
+
+	//parse command line arguments
+
+	char c;
+
+	bool host = true;
+	std::string hostAddress;
+	std::string port;
+
+	while ( (c = getopt(argc, argv, "h:p:")) != EOF) {
+		switch (c) {
+
+		case 'h':
+			hostAddress = optarg;
+			host = false;
+
+			break;
+		case 'p':
+			//set the port
+			port = optarg;
+			break;
+		default:
+			print_usage();
+			return 0;
+		}
+	}
+
+
+
+
   LogManager &log_manager = LogManager::getInstance();
+
+  if (host) {
+	  log_manager.writeLog("Game: Starting as client, connecting to %s \n", hostAddress.c_str(), port.c_str());
+  }
+  else {
+	  log_manager.writeLog("Game: Starting a host \n");
+  }
 
   // Start up Game Manager
   GameManager &game_manager = GameManager::getInstance();
