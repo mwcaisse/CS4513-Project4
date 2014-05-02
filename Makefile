@@ -43,6 +43,8 @@ all: $(EXECUTABLE) Makefile
 
 $(EXECUTABLE): $(ENG) $(OBJECTS) $(GAME) $(GAMESRC) 
 	$(CC) $(GAME) $(OBJECTS) $(ENG) $(PLATFORM) -o $@ -I$(INCPATH) $(LDFLAGS) 
+	
+	cp ./game ./tst/
 
 .cpp.o: 
 	$(CC) -c $(DEBUG) -I$(INCPATH) $(PLATFORM) $< -o $@

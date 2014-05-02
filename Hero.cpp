@@ -43,7 +43,7 @@ Hero::Hero() {
 
   // set starting location
   WorldManager &world_manager = WorldManager::getInstance();
-  Position pos(7, world_manager.getBoundary().getVertical()/2);
+  Position pos(7, world_manager.getBoundary().getVertical()/4 * 3);
   setPosition(pos);
 
   fire_slowdown = 15;

@@ -26,7 +26,7 @@ NetworkSentry::~NetworkSentry() {
 
 int NetworkSentry::eventHandler(Event* ev_p) {
 	if (ev_p->getType() == STEP_EVENT) {
-		//step();
+		step();
 		return 1;
 	}
 	return 0;
@@ -44,15 +44,11 @@ void NetworkSentry::step() {
 	//int data = manager.isData();
 	//get all of the messages from the network manager
 	if (manager.isMessage()) {
-		int data = manager.isData();
-		logManager.writeLog("NetworkSentry::step(): Message Available1: data: %d", data);
 		//we have a message, retrieve the message
 		EventNetwork* event = manager.recvMessage();
-		data = manager.isData();
-		logManager.writeLog("NetworkSentry::step(): Message Available2: data: %d", data);
 		if (event) {
 			//notify all interested
-			//manager.onEvent(event);
+			manager.onEvent(event);
 		}
 	}
 

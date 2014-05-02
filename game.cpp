@@ -37,16 +37,19 @@ int main(int argc, char *argv[]) {
 
 	char c;
 
-	bool host = true;
+	bool isHost = true;
 	std::string hostAddress;
 	std::string port;
+
+	Host* host;
+	Client* client;
 
 	while ( (c = getopt(argc, argv, "h:p:")) != EOF) {
 		switch (c) {
 
 		case 'h':
 			hostAddress = optarg;
-			host = false;
+			isHost = false;
 
 			break;
 		case 'p':
@@ -59,7 +62,7 @@ int main(int argc, char *argv[]) {
 		}
 	}
 
-	HostStatus::setHost(host);
+	HostStatus::setHost(isHost);
 
 	if (port.length() == 0) {
 		port = DRAGONFLY_PORT;
@@ -96,7 +99,7 @@ int main(int argc, char *argv[]) {
 		  log_manager.writeLog("Game: Fatal Error listening for clients");
 		  return 0;
 	  }
-	  new Host();
+	  host = new Host();
   }
   else {
 	  log_manager.writeLog("Game: Connecting to server... \n");
@@ -104,7 +107,7 @@ int main(int argc, char *argv[]) {
 		  log_manager.writeLog("Game: Fatal Error connecting to host");
 		  return 0;
 	  }
-	  new Client();
+	  client = new Client();
   }
 
 
@@ -116,6 +119,10 @@ int main(int argc, char *argv[]) {
 
   // Setup some objects
   populateWorld();
+
+  if (HostStatus::isHost()) {
+	  host->startGame();
+  }
 
   // Enable pausing
   //TODO: for now disable pausing
@@ -133,6 +140,7 @@ void loadResources(void) {
   ResourceManager &resource_manager = ResourceManager::getInstance();
   resource_manager.loadSprite("sprites/saucer-spr.txt", "saucer");
   resource_manager.loadSprite("sprites/ship-spr.txt", "ship");
+  resource_manager.loadSprite("sprites/cship-spr.txt", "cship");
   resource_manager.loadSprite("sprites/bullet-spr.txt", "bullet");
   resource_manager.loadSprite("sprites/explosion-spr.txt", "explosion");
   resource_manager.loadSprite("sprites/gamestart-spr.txt", "gamestart");

@@ -17,6 +17,7 @@
 #include "GameOver.h"
 #include "GameStart.h"
 #include "ClientHero.h"
+#include "HostStatus.h"
 
 ClientHero::ClientHero() {
 
@@ -35,9 +36,13 @@ ClientHero::ClientHero() {
 
   setType("Hero");
 
+  if (HostStatus::isHost()) {
+	  registerInterest(STEP_EVENT);
+  }
+
   // set starting location
   WorldManager &world_manager = WorldManager::getInstance();
-  Position pos(7, world_manager.getBoundary().getVertical()/2);
+  Position pos(7, world_manager.getBoundary().getVertical()/4);
   setPosition(pos);
 
   fire_slowdown = 15;
@@ -63,15 +68,71 @@ ClientHero::~ClientHero() {
   }
 }
 
+int ClientHero::eventHandler(Event *p_e) {
+
+  if (p_e->getType() == STEP_EVENT) {
+    step();
+    return 1;
+  }
+  // if we get here, we have ignored this event
+  return 0;
+}
+
+// call move (or do nothing) according to key pressed
+void ClientHero::keyboard(int key) {
+  WorldManager &world_manager = WorldManager::getInstance();
+  LogManager& logManager = LogManager::getInstance();
+
+  logManager.writeLog("ClientHero::keyboard() Key: %d ", key);
+
+  switch(key) {
+  case KEY_UP:			// up arrow
+    move(-1);
+    break;
+  case KEY_DOWN:		// down arrow
+    move(+1);
+    break;
+  case ' ':			// fire
+	  logManager.writeLog("ClientHero::keyboard() User pressed space");
+    fire();
+    break;
+  /*case 13:			// nuke! NO NUKES atm
+    nuke();
+    break;*/
+  case 'q':			// quit
+    world_manager.markForDelete(this);
+    break;
+  default:
+	  logManager.writeLog("ClientHero::keyboard() Switch fell through");
+	  break;
+  };
+  return;
+}
+
 // move up or down
 void ClientHero::move(int dy) {
   WorldManager &world_manager = WorldManager::getInstance();
   Position new_pos(getPosition().getX(), getPosition().getY() + dy);
 
   // if stays on screen, allow move
-  if ((new_pos.getY() > 3) && 
+  if ((new_pos.getY() > 3) &&
       (new_pos.getY() < world_manager.getBoundary().getVertical()))
     world_manager.moveObject(this, new_pos);
+}
+
+// fire a bullet
+void ClientHero::fire() {
+  if (fire_countdown > 0)
+    return;
+  fire_countdown = fire_slowdown;
+  new Bullet(getPosition());
+}
+
+// decrease fire restriction
+void ClientHero::step() {
+  fire_countdown--;
+  if (fire_countdown < 0)
+    fire_countdown = 0;
 }
 
 

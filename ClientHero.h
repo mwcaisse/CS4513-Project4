@@ -12,9 +12,17 @@ class ClientHero : public Object {
   int fire_countdown;
   int nuke_count;
   void move(int dy);
+  void fire();
+  void step();
 
  public:
   ClientHero();
   ~ClientHero();
+
+  // call move (or do nothing) according to key pressed
+  void keyboard(int key);
+
+  //event handler for step event
+  int eventHandler(Event *p_e);
 };
 

@@ -13,9 +13,14 @@
 #include "EventNetwork.h"
 #include "EventStep.h"
 
+class ClientHero;
+
 class Host: public Object {
 
 private:
+
+	/** The client hero that this host controls */
+	ClientHero* clientHero;
 
 	/** Handles network events
 	 * 	@param event A pointer to the network event
@@ -39,6 +44,12 @@ public:
 	 */
 
 	int eventHandler(Event* ev_p);
+
+	/** Initializes the host for the gamestart
+	 *
+	 */
+
+	void startGame();
 
 };
 

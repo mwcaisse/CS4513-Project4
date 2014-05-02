@@ -11,6 +11,7 @@
 #include "NetworkManager.h"
 #include "EventNetwork.h"
 #include "EventStep.h"
+#include "ClientHero.h"
 
 Host::Host() {
 	NetworkManager::getInstance().registerInterest(this, NETWORK_EVENT);
@@ -50,8 +51,8 @@ void Host::networkHandle(EventNetwork* event) {
 		int key = event->getMiscInt();
 
 		LogManager &log_manager = LogManager::getInstance();
-		log_manager.writeLog("Host::networkhandle: received a keystroke from the client: %d", key);
-
+		log_manager.writeLog("Host::networkHandle: received a keystroke from the client: %d", key);
+		clientHero->keyboard(key);
 	}
 }
 
@@ -61,5 +62,13 @@ void Host::networkHandle(EventNetwork* event) {
 
 void Host::stepHandle(EventStep* event) {
 
+}
+
+/** Initializes the host for the gamestart
+ *
+ */
+
+void Host::startGame() {
+	clientHero = new ClientHero();
 }
 
