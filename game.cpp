@@ -3,18 +3,22 @@
 // 
 
 #include <unistd.h>
+#include <iostream>
 
 // Engine includes
 #include "GameManager.h"
 #include "LogManager.h"
 #include "Pause.h"
 #include "ResourceManager.h"
+#include "NetworkManager.h"
 
 // Game includes
 #include "Saucer.h"
 #include "Hero.h"
 #include "Star.h"
 #include "GameStart.h"
+#include "Client.h"
+#include "Host.h"
 
 // Function prototypes
 void loadResources(void);
@@ -54,17 +58,14 @@ int main(int argc, char *argv[]) {
 		}
 	}
 
+	if (port.length() == 0) {
+		port = DRAGONFLY_PORT;
+	}
 
+	//std::cout << "Yisss, Address: " << hostAddress << " port: " << port << std::endl;
 
 
   LogManager &log_manager = LogManager::getInstance();
-
-  if (host) {
-	  log_manager.writeLog("Game: Starting as client, connecting to %s \n", hostAddress.c_str(), port.c_str());
-  }
-  else {
-	  log_manager.writeLog("Game: Starting a host \n");
-  }
 
   // Start up Game Manager
   GameManager &game_manager = GameManager::getInstance();
@@ -74,7 +75,35 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
+  if (host) {
+  	  log_manager.writeLog("Game: Starting as client, connecting to %s \n", hostAddress.c_str(), port.c_str());
+    }
+    else {
+  	  log_manager.writeLog("Game: Starting a host \n");
+    }
+
   //lets start the network?
+  NetworkManager& networkManager = NetworkManager::getInstance();
+
+  networkManager.startUp();
+
+  if (host) {
+	  log_manager.writeLog("Game: Waiting for a user to connect... \n");
+	  if (networkManager.accept(port)) {
+		  log_manager.writeLog("Game: Fatal Error listening for clients");
+		  return 0;
+	  }
+	  new Host();
+  }
+  else {
+	  log_manager.writeLog("Game: Connecting to server... \n");
+	  if (networkManager.connect(hostAddress, port)) {
+		  log_manager.writeLog("Game: Fatal Error connecting to host");
+		  return 0;
+	  }
+	  new Client();
+  }
+
 
   // Show splash screen
   splash();

@@ -17,6 +17,12 @@ public:
 	NetworkSentry();
 	virtual ~NetworkSentry();
 
+	/** Handles all events
+	 */
+
+	int eventHandler(Event* ev_p);
+
+
 	/** Step event, checks the network manager to see if any messages are available,
 	 * 		if there are messages available notifies everyone interested in network events
 	 *

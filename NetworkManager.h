@@ -27,6 +27,7 @@ struct _network_message_header {
 typedef struct _network_message_header message_header;
 
 class EventNetwork;
+class NetworkSentry;
 
 class NetworkManager : public Manager {
 
@@ -44,6 +45,9 @@ private:
 
 	/** The singleton instance */
 	static NetworkManager _instance;
+
+	/** The network sentry for the network manager */
+	NetworkSentry* sentry;
 
 	/** Creates the server socket for listening for new clients
 	 *

@@ -20,12 +20,14 @@
 
 #include "NetworkManager.h"
 #include "EventNetwork.h"
+#include "NetworkSentry.h"
 
 NetworkManager NetworkManager::_instance;
 
 NetworkManager::NetworkManager() {
 	//create a new network manager
 	sock = -1;
+	sentry = new NetworkSentry();
 }
 
 /** Returns the singleton instance of the NetworkManager */
