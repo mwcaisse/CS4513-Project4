@@ -131,13 +131,13 @@ void Saucer::hit(EventCollision *p_c) {
   if ((p_c -> getObject1() -> getType() == "Bullet") ||
       (p_c -> getObject2() -> getType() == "Bullet")) {
 
-    // Create an explosion
-    Explosion *p_explosion = new Explosion(getPosition());
-
-    // Saucers appear stay around perpetually
-    if (HostStatus::isHost()) {
-    	new Saucer;
-    }
+	//if we are host, create explosion + saucer
+	if (HostStatus::isHost()) {
+		// Create an explosion
+		Explosion *p_explosion = new Explosion(getPosition());
+		// Saucers appear stay around perpetually
+		new Saucer;
+	}
   }
 
   // if hero, mark both objects for destruction 

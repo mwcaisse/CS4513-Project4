@@ -8,6 +8,8 @@
 #include "LogManager.h"
 #include "ResourceManager.h"
 #include "WorldManager.h"
+#include "HostStatus.h"
+#include "NetworkManager.h"
 
 Explosion::Explosion(Position pos) {
   registerInterest(STEP_EVENT);
@@ -29,6 +31,13 @@ Explosion::Explosion(Position pos) {
 
   time_to_live =  getSprite()->getFrameCount();
   setSolidness(SPECTRAL);
+
+  if (HostStatus::isHost()) {
+	  if (NetworkManager::getInstance().sendCreateMessage(this)) {
+		  LogManager::getInstance().writeLog("Explosion::Explosion(): error sending create message to client");
+	  }
+  }
+
 }
 
 Explosion::Explosion(std::string serialized) {
