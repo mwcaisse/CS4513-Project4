@@ -135,6 +135,7 @@ void loadResources(void) {
   resource_manager.loadSprite("sprites/ship-spr.txt", "ship");
   resource_manager.loadSprite("sprites/cship-spr.txt", "cship");
   resource_manager.loadSprite("sprites/bullet-spr.txt", "bullet");
+  resource_manager.loadSprite("sprites/cbullet-spr.txt", "cbullet");
   resource_manager.loadSprite("sprites/explosion-spr.txt", "explosion");
   resource_manager.loadSprite("sprites/gamestart-spr.txt", "gamestart");
   resource_manager.loadSprite("sprites/gameover-spr.txt", "gameover");

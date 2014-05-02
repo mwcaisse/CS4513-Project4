@@ -15,17 +15,16 @@ Bullet::Bullet(std::string serialized) {
 	deserialize(serialized);
 }
 
-Bullet::Bullet(Position hero_pos) {
-
+Bullet::Bullet(Position hero_pos, std::string spriteName) {
   // link to "bullet" sprite
   ResourceManager &resource_manager = ResourceManager::getInstance();
-  Sprite *p_temp_sprite = resource_manager.getSprite("bullet");
+  Sprite *p_temp_sprite = resource_manager.getSprite(spriteName);
   if (!p_temp_sprite) {
-    LogManager &log_manager = LogManager::getInstance();
-    log_manager.writeLog("Bullet::Bullet(): Warning! Sprite '%s' not found", "bullet");
+	LogManager &log_manager = LogManager::getInstance();
+	log_manager.writeLog("Bullet::Bullet(): Warning! Sprite '%s' not found", spriteName.c_str());
   } else {
-    setSprite(p_temp_sprite);
-    setSpriteSlowdown(5);		
+	setSprite(p_temp_sprite);
+	setSpriteSlowdown(5);
   }
 
   // set other object properties
@@ -37,10 +36,10 @@ Bullet::Bullet(Position hero_pos) {
   setPosition(pos);
 
   if (HostStatus::isHost()) {
- 	  if (NetworkManager::getInstance().sendCreateMessage(this)) {
- 		  LogManager& logger = LogManager::getInstance();
- 		  logger.writeLog("Bullet::Bullet(): Unable to send create message to client");
- 	  }
+	  if (NetworkManager::getInstance().sendCreateMessage(this)) {
+		  LogManager& logger = LogManager::getInstance();
+		  logger.writeLog("Bullet::Bullet(): Unable to send create message to client");
+	  }
    }
 }
 
@@ -68,6 +67,9 @@ int Bullet::eventHandler(Event *p_e) {
 void Bullet::out() {
   WorldManager &world_manager = WorldManager::getInstance();
   world_manager.markForDelete(this);
+
+  NetworkManager& networkManager = NetworkManager::getInstance();
+  networkManager.sendDeleteMessage(this);
 }
 
 // if bullet hits saucer, mark saucer and bullet for deletion
@@ -75,6 +77,10 @@ void Bullet::hit(EventCollision *p_c) {
   WorldManager &world_manager = WorldManager::getInstance();
   world_manager.markForDelete(p_c->getObject1());
   world_manager.markForDelete(p_c->getObject2());
+
+  NetworkManager& networkManager = NetworkManager::getInstance();
+  networkManager.sendDeleteMessage(p_c->getObject1());
+  networkManager.sendDeleteMessage(p_c->getObject2());
 }
 
 

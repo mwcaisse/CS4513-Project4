@@ -19,6 +19,7 @@ class Hero : public Object {
 
  public:
   Hero();
+  Hero(std::string serialized);
   ~Hero();
   int eventHandler(Event *p_e);
 };

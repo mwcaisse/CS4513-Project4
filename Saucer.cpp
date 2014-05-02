@@ -50,7 +50,7 @@ Saucer::Saucer() {
   registerInterest(NUKE_EVENT);
 
   if (HostStatus::isHost()) {
-	  if (NetworkManager::getInstance().NetworkManager::getInstance().sendCreateMessage(this)) {
+	  if (NetworkManager::getInstance().sendCreateMessage(this)) {
 		  LogManager& logger = LogManager::getInstance();
 		  logger.writeLog("Saucer::Saucer(): Unable to send create message to client");
 	  }
@@ -111,6 +111,9 @@ void Saucer::out() {
 
   // otherwise, move back to far right
   moveToStart();
+
+  NetworkManager& networkManager = NetworkManager::getInstance();
+  networkManager.sendUpdateMessage(this); //inform client this saucer has updated
 
 // spawn a new Saucer to make the game get harder
 

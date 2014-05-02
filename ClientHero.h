@@ -17,6 +17,7 @@ class ClientHero : public Object {
 
  public:
   ClientHero();
+  ClientHero(std::string serialized);
   ~ClientHero();
 
   // call move (or do nothing) according to key pressed

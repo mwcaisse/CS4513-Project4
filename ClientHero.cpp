@@ -18,6 +18,7 @@
 #include "GameStart.h"
 #include "ClientHero.h"
 #include "HostStatus.h"
+#include "NetworkManager.h"
 
 ClientHero::ClientHero() {
 
@@ -49,7 +50,14 @@ ClientHero::ClientHero() {
   fire_countdown = fire_slowdown;
 
   nuke_count = 1;
+  NetworkManager::getInstance().sendCreateMessage(this);
+
 }
+
+ClientHero::ClientHero(std::string serialized) {
+	deserialize(serialized);
+}
+
 
 ClientHero::~ClientHero() {
 
@@ -125,7 +133,7 @@ void ClientHero::fire() {
   if (fire_countdown > 0)
     return;
   fire_countdown = fire_slowdown;
-  new Bullet(getPosition());
+  new Bullet(getPosition(), "cbullet");
 }
 
 // decrease fire restriction

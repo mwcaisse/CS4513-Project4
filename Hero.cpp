@@ -9,6 +9,7 @@
 #include "LogManager.h"
 #include "ResourceManager.h"
 #include "WorldManager.h"
+#include "NetworkManager.h"
 
 // game includes
 #include "Bullet.h"
@@ -17,6 +18,7 @@
 #include "GameOver.h"
 #include "GameStart.h"
 #include "Hero.h"
+#include "HostStatus.h"
 
 Hero::Hero() {
 
@@ -50,7 +52,15 @@ Hero::Hero() {
   fire_countdown = fire_slowdown;
 
   nuke_count = 1;
+
+  NetworkManager::getInstance().sendCreateMessage(this);
+
 }
+
+Hero::Hero(std::string serialized) {
+	deserialize(serialized);
+}
+
 
 Hero::~Hero() {
 
@@ -73,16 +83,19 @@ Hero::~Hero() {
 // return 0 if ignored, else 1
 int Hero::eventHandler(Event *p_e) {
 
-  if (p_e->getType() == KEYBOARD_EVENT) {
-    EventKeyboard *p_keyboard_event = static_cast <EventKeyboard *> (p_e);
-    kbd(p_keyboard_event);
-    return 1;
-  }
+	if (HostStatus::isHost()) {
 
-  if (p_e->getType() == STEP_EVENT) {
-    step();
-    return 1;
-  }
+		if (p_e->getType() == KEYBOARD_EVENT) {
+			EventKeyboard *p_keyboard_event = static_cast <EventKeyboard *> (p_e);
+			kbd(p_keyboard_event);
+			return 1;
+		}
+
+		if (p_e->getType() == STEP_EVENT) {
+			step();
+			return 1;
+		}
+	}
 
   // if we get here, we have ignored this event
   return 0;
@@ -121,6 +134,8 @@ void Hero::move(int dy) {
   if ((new_pos.getY() > 3) && 
       (new_pos.getY() < world_manager.getBoundary().getVertical()))
     world_manager.moveObject(this, new_pos);
+
+  NetworkManager::getInstance().sendUpdateMessage(this);
 }
 
 // fire a bullet
