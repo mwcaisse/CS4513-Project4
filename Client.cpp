@@ -57,13 +57,13 @@ void Client::networkHandle(EventNetwork* event) {
 	switch (event->getOperation()) {
 
 	case CREATE:
-
+		createObject(event);
 		break;
 	case UPDATE:
-
+		updateObject(event);
 		break;
 	case DELETE:
-
+		deleteObject(event);
 		break;
 
 	}
