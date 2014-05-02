@@ -296,7 +296,7 @@ bool NetworkManager::isMessage() {
 	message_header header;
 	int res = recv(&header, size, true); // peek at the header
 	if (res < 0) {
-		logManager.writeLog("NetworkManager::isMessage(): Error, failed to read the header..");
+		logManager.writeLog("NetworkManager::isMessage(): Error, failed to read the message header");
 		//recv failed, or isData lied?? the horror
 		return false;
 	}

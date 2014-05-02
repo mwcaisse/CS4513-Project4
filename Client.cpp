@@ -77,8 +77,6 @@ void Client::keyboardHandle(EventKeyboard* event) {
 	//get the keyboard key pressed
 	int key = event->getKey();
 
-	logManager.writeLog("Client::keyboardHandle: Keyboard event, sending key %d to host", key);
-
 	//send the key event to the host
 	NetworkManager& networkManager = NetworkManager::getInstance();
 	int res = networkManager.sendMessage(KEYSTK, "", key);

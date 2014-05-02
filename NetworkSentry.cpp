@@ -42,11 +42,9 @@ void NetworkSentry::step() {
 	NetworkManager& manager = NetworkManager::getInstance();
 
 	int data = manager.isData();
-	logManager.writeLog("NetworkSentry::step() Data available: %d", data);
-
 	//get all of the messages from the network manager
 	while (manager.isMessage()) {
-		logManager.writeLog("NetworkSentry::step(): Message Available");
+		//logManager.writeLog("NetworkSentry::step(): Message Available");
 		//we have a message, retrieve the message
 		EventNetwork* event = manager.recvMessage();
 		if (event) {
