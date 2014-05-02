@@ -8,6 +8,7 @@
 #include "ResourceManager.h"
 #include "EventOut.h"
 #include "Saucer.h"
+#include "HostStatus.h"
 
 Bullet::Bullet(Position hero_pos) {
 
@@ -34,20 +35,21 @@ Bullet::Bullet(Position hero_pos) {
 // handle event
 // return 0 if ignored, else 1
 int Bullet::eventHandler(Event *p_e) {
+	if (HostStatus::isHost()) { // only handle events if we are on the host
+		if (p_e->getType() == OUT_EVENT) {
+			out();
+			return 1;
+		}
 
-  if (p_e->getType() == OUT_EVENT) {
-    out();
-    return 1;
-  }
+		if (p_e->getType() == COLLISION_EVENT) {
+			EventCollision *p_collision_event = static_cast <EventCollision *> (p_e);
+			hit(p_collision_event);
+			return 1;
+		}
+	}
 
-  if (p_e->getType() == COLLISION_EVENT) {
-    EventCollision *p_collision_event = static_cast <EventCollision *> (p_e);
-    hit(p_collision_event);
-    return 1;
-  }
-
-  // if we get here, we have ignored this event
-  return 0;
+		// if we get here, we have ignored this event
+		return 0;
 }
 
 // if bullet moves outside world, mark self for deletion

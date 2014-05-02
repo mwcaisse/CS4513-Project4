@@ -32,7 +32,8 @@ GAMESRC= Saucer.cpp \
          NetworkSentry.cpp \
          Host.cpp \
          Client.cpp \
-         HostStatus.cpp
+         HostStatus.cpp \
+         ClientHero.cpp
          
 GAME= game.cpp
 EXECUTABLE= game		

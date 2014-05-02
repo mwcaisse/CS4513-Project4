@@ -19,6 +19,7 @@
 #include "GameStart.h"
 #include "Client.h"
 #include "Host.h"
+#include "HostStatus.h"
 
 // Function prototypes
 void loadResources(void);
@@ -58,6 +59,8 @@ int main(int argc, char *argv[]) {
 		}
 	}
 
+	HostStatus::setHost(host);
+
 	if (port.length() == 0) {
 		port = DRAGONFLY_PORT;
 	}
@@ -75,19 +78,19 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
-  if (host) {
-  	  log_manager.writeLog("Game: Starting as client, connecting to %s \n", hostAddress.c_str(), port.c_str());
-    }
-    else {
-  	  log_manager.writeLog("Game: Starting a host \n");
-    }
+	if (HostStatus::isHost()) {
+		log_manager.writeLog("Game: Starting a host \n");
+	}
+	else {
+		log_manager.writeLog("Game: Starting as client, connecting to %s \n", hostAddress.c_str(), port.c_str());
+	}
 
   //lets start the network?
   NetworkManager& networkManager = NetworkManager::getInstance();
 
   networkManager.startUp();
 
-  if (host) {
+  if (HostStatus::isHost()) {
 	  log_manager.writeLog("Game: Waiting for a user to connect... \n");
 	  if (networkManager.accept(port)) {
 		  log_manager.writeLog("Game: Fatal Error listening for clients");
@@ -115,7 +118,8 @@ int main(int argc, char *argv[]) {
   populateWorld();
 
   // Enable pausing
-  new Pause;
+  //TODO: for now disable pausing
+  //new Pause;
 
   // Run the game (this blocks until the game loop is over)
   game_manager.run();

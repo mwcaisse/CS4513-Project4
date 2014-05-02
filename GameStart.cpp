@@ -16,6 +16,7 @@
 #include "Hero.h"
 #include "Points.h"
 #include "Saucer.h"
+#include "HostStatus.h"
 
 GameStart::GameStart() {
   setType("GameStart");
@@ -64,21 +65,28 @@ int GameStart::eventHandler(Event *p_e) {
 }
 
 void GameStart::start() {
+	LogManager &logManager = LogManager::getInstance();
+	logManager.writeLog("GameStart::start(): Starting the game");
+	if (HostStatus::isHost()) {
+		// create hero
+		new Hero;
 
-  // create hero
-  new Hero;
+		// spawn some saucers to shoot
+		for (int i=0; i<16; i++)
+		new Saucer;
 
-  // spawn some saucers to shoot
-  for (int i=0; i<16; i++)
-    new Saucer;
+	}
 
   // setup heads-up display
   new Points;			// points display
+
+  /* TODO: no nukes right now
   ViewObject *p_vo = new ViewObject; // used for nuke count
   p_vo->setLocation(TOP_LEFT);
   p_vo->setViewString("Nukes");
   p_vo->setValue(1);
   p_vo->setColor(COLOR_YELLOW);
+  */
 
   // when the game starts, become inactive
   setActive(false);

@@ -17,6 +17,7 @@
 #include "Explosion.h"
 #include "Points.h"
 #include "Saucer.h"
+#include "HostStatus.h"
 
 Saucer::Saucer() {
   LogManager &log_manager = LogManager::getInstance();
@@ -57,7 +58,9 @@ Saucer::~Saucer() {
 int Saucer::eventHandler(Event *p_e) {
 
   if (p_e->getType() == OUT_EVENT) {
-    out();
+	  if (HostStatus::isHost()) {
+		  out();
+	  }
     return 1;
   }
 
@@ -92,11 +95,14 @@ void Saucer::out() {
   if (getPosition().getX() >= 0)
     return;
 
+
   // otherwise, move back to far right
   moveToStart();
 
-  // spawn a new Saucer to make the game get harder
+// spawn a new Saucer to make the game get harder
+
   new Saucer;
+
 }
 
 // if saucer and player collide, mark both for deletion
@@ -115,15 +121,18 @@ void Saucer::hit(EventCollision *p_c) {
     p_explosion -> setPosition(this -> getPosition());
 
     // Saucers appear stay around perpetually
-    new Saucer;
+    if (HostStatus::isHost()) {
+    	new Saucer;
+    }
   }
 
   // if hero, mark both objects for destruction 
   if (((p_c -> getObject1() -> getType()) == "Hero") || 
       ((p_c -> getObject2() -> getType()) == "Hero")) {
     WorldManager &world_manager = WorldManager::getInstance();
-    world_manager.markForDelete(p_c -> getObject1());
-    world_manager.markForDelete(p_c -> getObject2());
+    //TODO:: temporarily disable deleting heros
+    //world_manager.markForDelete(p_c -> getObject1());
+    //world_manager.markForDelete(p_c -> getObject2());
   }
 }
 
