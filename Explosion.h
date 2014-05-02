@@ -11,7 +11,8 @@ class Explosion : public Object {
   void step();
 
  public:
-  Explosion();
+  Explosion(Position pos);
+  Explosion(std::string serialized);
   int eventHandler(Event *p_e);
 };
 

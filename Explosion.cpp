@@ -9,7 +9,7 @@
 #include "ResourceManager.h"
 #include "WorldManager.h"
 
-Explosion::Explosion() {
+Explosion::Explosion(Position pos) {
   registerInterest(STEP_EVENT);
 
   // link to "explosion" sprite
@@ -25,8 +25,15 @@ Explosion::Explosion() {
 
   setType("Explosion");
 
+  setPosition(pos);
+
   time_to_live =  getSprite()->getFrameCount();
   setSolidness(SPECTRAL);
+}
+
+Explosion::Explosion(std::string serialized) {
+	deserialize(serialized);
+	time_to_live =  getSprite()->getFrameCount(); // set ttl
 }
 
 // handle event

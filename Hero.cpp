@@ -73,8 +73,7 @@ Hero::~Hero() {
       Position temp_pos = this->getPosition();
       temp_pos.setX(this->getPosition().getX() + i);
       temp_pos.setY(this->getPosition().getY() + j);
-      Explosion *p_explosion = new Explosion;
-      p_explosion -> setPosition(temp_pos);
+      Explosion *p_explosion = new Explosion(temp_pos);
     }
   }
 }
