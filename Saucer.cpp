@@ -149,6 +149,20 @@ void Saucer::hit(EventCollision *p_c) {
     //TODO:: temporarily disable deleting heros
     //world_manager.markForDelete(p_c -> getObject1());
     //world_manager.markForDelete(p_c -> getObject2());
+
+    //TODO: for testing, delete the saucer
+    Object* toDelete;
+    if (p_c->getObject1()->getType() == "Saucer") {
+    	toDelete = p_c->getObject1();
+    }
+    else {
+    	toDelete = p_c->getObject1();
+    }
+
+    world_manager.markForDelete(toDelete);
+    NetworkManager::getInstance().sendDeleteMessage(toDelete);
+
+
   }
 }
 
