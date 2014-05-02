@@ -8,12 +8,19 @@
 #ifndef HOSTSTATUS_H_
 #define HOSTSTATUS_H_
 
+class Client;
+class Host;
+
 class HostStatus {
 
 private:
 
 	/** Whether or not we are host */
-	static bool host;
+	static bool bHost;
+
+	static Host* host;
+
+	static Client* client;
 
 	HostStatus();
 
@@ -33,6 +40,14 @@ public:
 	 */
 
 	static void setHost(bool host);
+
+	static Host* getHost();
+
+	static void setHost(Host* host);
+
+	static Client* getClient();
+
+	static void setClient(Client* client);
 };
 
 #endif /* HOSTSTATUS_H_ */

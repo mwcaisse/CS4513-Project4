@@ -12,17 +12,6 @@
 #include "NetworkManager.h"
 
 Bullet::Bullet(std::string serialized) {
-	ResourceManager &resource_manager = ResourceManager::getInstance();
-	Sprite *p_temp_sprite = resource_manager.getSprite("bullet");
-	if (!p_temp_sprite) {
-		LogManager &log_manager = LogManager::getInstance();
-		log_manager.writeLog("Bullet::Bullet(): Warning! Sprite '%s' not found", "bullet");
-	}
-	else {
-		setSprite(p_temp_sprite);
-		setSpriteSlowdown(5);
-	}
-
 	deserialize(serialized);
 }
 

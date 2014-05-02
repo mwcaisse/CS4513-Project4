@@ -17,6 +17,7 @@
 #include "Points.h"
 #include "Saucer.h"
 #include "HostStatus.h"
+#include "Host.h"
 
 GameStart::GameStart() {
   setType("GameStart");
@@ -70,6 +71,8 @@ void GameStart::start() {
 	if (HostStatus::isHost()) {
 		// create hero
 		new Hero;
+
+		HostStatus::getHost()->startGame();
 
 		// spawn some saucers to shoot
 		for (int i=0; i<16; i++) {

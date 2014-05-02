@@ -21,20 +21,6 @@
 #include "NetworkManager.h"
 
 Saucer::Saucer(std::string serialized) {
-	LogManager &log_manager = LogManager::getInstance();
-	ResourceManager &resource_manager = ResourceManager::getInstance();
-
-	// setup "saucer" sprite
-	Sprite *p_temp_sprite = resource_manager.getSprite("saucer");
-	if (!p_temp_sprite) {
-		log_manager.writeLog("Saucer::Saucer(): Warning! Sprite '%s' not found",
-				"saucer");
-	}
-	else {
-		setSprite(p_temp_sprite);
-		setSpriteSlowdown(4);
-	}
-
 	deserialize(serialized);
 }
 

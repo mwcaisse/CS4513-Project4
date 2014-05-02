@@ -41,9 +41,6 @@ int main(int argc, char *argv[]) {
 	std::string hostAddress;
 	std::string port;
 
-	Host* host;
-	Client* client;
-
 	while ( (c = getopt(argc, argv, "h:p:")) != EOF) {
 		switch (c) {
 
@@ -99,7 +96,7 @@ int main(int argc, char *argv[]) {
 		  log_manager.writeLog("Game: Fatal Error listening for clients");
 		  return 0;
 	  }
-	  host = new Host();
+	  HostStatus::setHost(new Host());
   }
   else {
 	  log_manager.writeLog("Game: Connecting to server... \n");
@@ -107,7 +104,7 @@ int main(int argc, char *argv[]) {
 		  log_manager.writeLog("Game: Fatal Error connecting to host");
 		  return 0;
 	  }
-	  client = new Client();
+	  HostStatus::setClient(new Client());
   }
 
 
@@ -119,10 +116,6 @@ int main(int argc, char *argv[]) {
 
   // Setup some objects
   populateWorld();
-
-  if (HostStatus::isHost()) {
-	  host->startGame();
-  }
 
   // Enable pausing
   //TODO: for now disable pausing

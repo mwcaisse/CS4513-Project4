@@ -6,8 +6,12 @@
  */
 
 #include "HostStatus.h"
+#include "Client.h"
+#include "Host.h"
 
-bool HostStatus::host = true;
+bool HostStatus::bHost = true;
+Host* HostStatus::host;
+Client* HostStatus::client;
 
 HostStatus::HostStatus() {
 
@@ -18,9 +22,25 @@ HostStatus::~HostStatus() {
 }
 
 bool HostStatus::isHost() {
-	return host;
+	return bHost;
 }
 
 void HostStatus::setHost(bool isHost) {
-	host = isHost;
+	bHost = isHost;
+}
+
+Host* HostStatus::getHost() {
+	return host;
+}
+
+void HostStatus::setHost(Host* h) {
+	host = h;
+}
+
+Client* HostStatus::getClient() {
+	return client;
+}
+
+void HostStatus::setClient(Client* c) {
+	client = c;
 }
