@@ -72,8 +72,9 @@ void GameStart::start() {
 		new Hero;
 
 		// spawn some saucers to shoot
-		for (int i=0; i<16; i++)
-		new Saucer;
+		for (int i=0; i<16; i++) {
+			new Saucer;
+		}
 
 	}
 

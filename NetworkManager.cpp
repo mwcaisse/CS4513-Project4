@@ -215,7 +215,11 @@ int NetworkManager::send(void* buffer, int bytes) {
  */
 
 EventNetwork* NetworkManager::recvMessage() {
+
+	LogManager &logManager = LogManager::getInstance();
+
 	if (!isMessage()) {
+		logManager.writeLog("NetworkManager::recvMessage(): No message available, returning \n");
 		return NULL; // no message available, return
 	}
 
@@ -227,18 +231,24 @@ EventNetwork* NetworkManager::recvMessage() {
 		return NULL; // error header was not the right size
 	}
 
-	int dataLength = header.len;
+	std::string body = "";
 
-	char buffer[dataLength];
+	if (header.len > 0) {
+		//check if there is a body, so we don't block on recv like an idiot.
+		int dataLength = header.len;
 
-	read = recv(buffer, dataLength, false);
+		char buffer[dataLength];
 
-	if (read == -1) {
-		//error occurred while reading the message body
-		return NULL;
+
+		read = recv(buffer, dataLength, false);
+
+		if (read == -1) {
+			//error occurred while reading the message body
+			return NULL;
+		}
+
+		body = buffer;
 	}
-
-	std::string body = buffer;
 
 	return new EventNetwork(header, body);
 
