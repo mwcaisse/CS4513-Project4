@@ -126,6 +126,10 @@ void ClientHero::move(int dy) {
   if ((new_pos.getY() > 3) &&
       (new_pos.getY() < world_manager.getBoundary().getVertical()))
     world_manager.moveObject(this, new_pos);
+
+  //notify the client that we have moved
+  NetworkManager::getInstance().sendUpdateMessage(this);
+
 }
 
 // fire a bullet
