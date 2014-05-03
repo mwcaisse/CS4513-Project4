@@ -53,7 +53,9 @@ Hero::Hero() {
 
   nuke_count = 1;
 
-  NetworkManager::getInstance().sendCreateMessage(this);
+  if (NetworkManager::getInstance().sendCreateMessage(this) == -1) {
+	  LogManager::getInstance().writeLog("Hero::Hero(): Unable to send create message to client");
+  }
 
 }
 

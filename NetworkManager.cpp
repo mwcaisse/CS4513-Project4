@@ -42,6 +42,7 @@ NetworkManager& NetworkManager::getInstance() {
 
 int NetworkManager::startUp() {
 	sock = -1;
+	LogManager::getInstance().writeLog("Network manager started");
 	return 0;
 }
 
@@ -53,6 +54,7 @@ void NetworkManager::shutDown() {
 	if (isConnected()) {
 		close();
 	}
+	LogManager::getInstance().writeLog("Network manager stopped");
 }
 
 /** Checks to make sure the event type is valid

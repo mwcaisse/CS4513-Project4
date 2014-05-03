@@ -50,7 +50,7 @@ Saucer::Saucer() {
   registerInterest(NUKE_EVENT);
 
   if (HostStatus::isHost()) {
-	  if (NetworkManager::getInstance().sendCreateMessage(this)) {
+	  if (NetworkManager::getInstance().sendCreateMessage(this) == -1) {
 		  LogManager& logger = LogManager::getInstance();
 		  logger.writeLog("Saucer::Saucer(): Unable to send create message to client");
 	  }
@@ -154,7 +154,7 @@ void Saucer::hit(EventCollision *p_c) {
     	toDelete = p_c->getObject1();
     }
     else {
-    	toDelete = p_c->getObject2();
+    	toDelete = p_c->getObject1();
     }
 
     world_manager.markForDelete(toDelete);

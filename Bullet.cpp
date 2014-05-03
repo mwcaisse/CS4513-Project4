@@ -36,7 +36,7 @@ Bullet::Bullet(Position hero_pos, std::string spriteName) {
   setPosition(pos);
 
   if (HostStatus::isHost()) {
-	  if (NetworkManager::getInstance().sendCreateMessage(this)) {
+	  if (NetworkManager::getInstance().sendCreateMessage(this) == -1) {
 		  LogManager& logger = LogManager::getInstance();
 		  logger.writeLog("Bullet::Bullet(): Unable to send create message to client");
 	  }

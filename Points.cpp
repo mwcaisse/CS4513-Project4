@@ -38,7 +38,7 @@ int Points::eventHandler(Event *p_e) {
     }
     //send score update to server every 5 secconds if we are host
     if (HostStatus::isHost() && (static_cast <EventStep *> (p_e) -> getStepCount() % (30 * 5) == 0)) {
-    	if (NetworkManager::getInstance().sendPointMessage(getValue())) {
+    	if (NetworkManager::getInstance().sendPointMessage(getValue()) == -1) {
     		LogManager::getInstance().writeLog("Points::eventHandler(): Failed to send points sync message to client");
     	}
     }

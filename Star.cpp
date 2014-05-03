@@ -23,7 +23,7 @@ Star::Star() {
   setPosition(pos);
 
   if (HostStatus::isHost()) {
-	 if (NetworkManager::getInstance().sendCreateMessage(this)) {
+	 if (NetworkManager::getInstance().sendCreateMessage(this) == -1) {
 		 LogManager::getInstance().writeLog("Star::Star(): Unable to send create message to client");
 	 }
   }

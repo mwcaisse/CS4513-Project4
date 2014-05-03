@@ -33,7 +33,7 @@ Explosion::Explosion(Position pos) {
   setSolidness(SPECTRAL);
 
   if (HostStatus::isHost()) {
-	  if (NetworkManager::getInstance().sendCreateMessage(this)) {
+	  if (NetworkManager::getInstance().sendCreateMessage(this) == -1) {
 		  LogManager::getInstance().writeLog("Explosion::Explosion(): error sending create message to client");
 	  }
   }

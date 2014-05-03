@@ -90,7 +90,7 @@ void ClientHero::keyboard(int key) {
   WorldManager &world_manager = WorldManager::getInstance();
   LogManager& logManager = LogManager::getInstance();
 
-  logManager.writeLog("ClientHero::keyboard() Key: %d ", key);
+  //logManager.writeLog("ClientHero::keyboard() Key: %d ", key);
 
   switch(key) {
   case KEY_UP:			// up arrow
@@ -100,7 +100,6 @@ void ClientHero::keyboard(int key) {
     move(+1);
     break;
   case ' ':			// fire
-	  logManager.writeLog("ClientHero::keyboard() User pressed space");
     fire();
     break;
   /*case 13:			// nuke! NO NUKES atm
