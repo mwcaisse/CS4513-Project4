@@ -18,8 +18,7 @@
 #include "Saucer.h"
 #include "HostStatus.h"
 #include "Host.h"
-
-#define POINTS_ID (50002)
+#include "StaticIds.h"
 
 GameStart::GameStart() {
   setType("GameStart");

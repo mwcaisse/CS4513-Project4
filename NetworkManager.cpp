@@ -212,6 +212,10 @@ int NetworkManager::sendKeyMessage(int key) {
 	return sendMessage(KEYSTK, "", key);
 }
 
+int NetworkManager::sendPointMessage(int points) {
+	return sendMessage(POINTS, "", points);
+}
+
 /** Sends the specified bytes over the connected network
  *
  * @param buffer The bytes to send

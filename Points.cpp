@@ -10,6 +10,9 @@
 #include "EventStep.h"
 #include "GraphicsManager.h"
 #include "LogManager.h"
+#include "NetworkManager.h"
+#include "HostStatus.h"
+
 
 Points::Points() {
   setLocation(TOP_RIGHT);
@@ -30,8 +33,15 @@ int Points::eventHandler(Event *p_e) {
 
   // If step, increment score every second (30 steps)
   if (p_e->getType() == STEP_EVENT) {
-    if (static_cast <EventStep *> (p_e) -> getStepCount() % 30 == 0)
+    if (static_cast <EventStep *> (p_e) -> getStepCount() % 30 == 0) {
       setValue(getValue() + 1);
+    }
+    //send score update to server every 5 secconds if we are host
+    if (HostStatus::isHost() && (static_cast <EventStep *> (p_e) -> getStepCount() % (30 * 5) == 0)) {
+    	if (NetworkManager::getInstance().sendPointMessage(getValue())) {
+    		LogManager::getInstance().writeLog("Points::eventHandler(): Failed to send points sync message to client");
+    	}
+    }
     return 1;
   }
 

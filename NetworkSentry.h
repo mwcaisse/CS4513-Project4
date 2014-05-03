@@ -10,8 +10,6 @@
 
 #include "include/Object.h"
 
-#define NETWORK_SENTRY_ID (50001)
-
 class NetworkSentry: public Object {
 
 

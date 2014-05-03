@@ -10,6 +10,7 @@
 #include "EventNetwork.h"
 #include "EventStep.h"
 #include "LogManager.h"
+#include "StaticIds.h"
 
 
 NetworkSentry::NetworkSentry() {

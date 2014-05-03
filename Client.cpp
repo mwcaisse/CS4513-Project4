@@ -17,6 +17,8 @@
 #include "Hero.h"
 #include "Star.h"
 #include "Explosion.h"
+#include "Points.h"
+#include "StaticIds.h"
 
 Client::Client() {
 	NetworkManager::getInstance().registerInterest(this, NETWORK_EVENT);
@@ -68,6 +70,9 @@ void Client::networkHandle(EventNetwork* event) {
 	case DELETE:
 		deleteObject(event);
 		break;
+	case POINTS:
+		updatePoints(event);
+		break;
 
 	}
 
@@ -103,6 +108,13 @@ void Client::deleteObject(EventNetwork* event) {
 	WorldManager& worldManager = WorldManager::getInstance();
 	Object* toDelete = worldManager.objectWithId(id);
 	worldManager.markForDelete(toDelete);
+}
+
+void Client::updatePoints(EventNetwork* event) {
+	int points = event->getMiscInt();
+	Object* obj = WorldManager::getInstance().objectWithId(POINTS_ID);
+	Points* pointsObj = static_cast<Points*>(obj);
+	pointsObj->setValue(points);
 }
 
 /** Handles keyboard events

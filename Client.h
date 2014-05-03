@@ -44,6 +44,8 @@ private:
 
 	void deleteObject(EventNetwork* event);
 
+	void updatePoints(EventNetwork* event);
+
 public:
 
 	Client();

@@ -20,11 +20,8 @@
 #include "Client.h"
 #include "Host.h"
 #include "HostStatus.h"
+#include "StaticIds.h"
 
-
-#define GAME_START_ID (50000)
-//network sentry 50001
-//points         50002
 
 // Function prototypes
 void loadResources(void);
