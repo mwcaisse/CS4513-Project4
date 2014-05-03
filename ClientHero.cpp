@@ -61,18 +61,33 @@ ClientHero::ClientHero(std::string serialized) {
 
 ClientHero::~ClientHero() {
 
-  // create GameOver object
-  GameOver *p_go = new GameOver;
+	bool gameOverExists = false;
 
-  // make big explosion
-  for (int i=-8; i<=8; i+=5) {
-    for (int j=-5; j<=5; j+=3) {
-      Position temp_pos = this->getPosition();
-      temp_pos.setX(this->getPosition().getX() + i);
-      temp_pos.setY(this->getPosition().getY() + j);
-      Explosion *p_explosion = new Explosion(temp_pos);
-    }
-  }
+	ObjectList objectList = WorldManager::getInstance().getAllObjects();
+	ObjectListIterator itr(&objectList);
+
+	for (itr.first(); !itr.isDone(); itr.next()) {
+		Object* obj = itr.currentObject();
+		if (obj->getType() == "GameOver") {
+			gameOverExists = true;
+			break;
+		}
+	}
+
+	if (!gameOverExists) {
+	  // create GameOver object
+	  GameOver *p_go = new GameOver;
+
+	  // make big explosion
+	  for (int i=-8; i<=8; i+=5) {
+		for (int j=-5; j<=5; j+=3) {
+		  Position temp_pos = this->getPosition();
+		  temp_pos.setX(this->getPosition().getX() + i);
+		  temp_pos.setY(this->getPosition().getY() + j);
+		  Explosion *p_explosion = new Explosion(temp_pos);
+		}
+	  }
+	}
 }
 
 int ClientHero::eventHandler(Event *p_e) {

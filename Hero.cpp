@@ -65,8 +65,24 @@ Hero::Hero(std::string serialized) {
 
 
 Hero::~Hero() {
+
+	bool gameOverExists = false;
+
+	ObjectList objectList = WorldManager::getInstance().getAllObjects();
+	ObjectListIterator itr(&objectList);
+
+	for (itr.first(); !itr.isDone(); itr.next()) {
+		Object* obj = itr.currentObject();
+		if (obj->getType() == "GameOver") {
+			gameOverExists = true;
+			break;
+		}
+	}
+
+
+
 	//only do this if we are the host. otherwise die quietly
-	if (HostStatus::isHost()) {
+	if (HostStatus::isHost() && !gameOverExists) {
 	  // create GameOver object
 	  GameOver *p_go = new GameOver;
 

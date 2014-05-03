@@ -96,6 +96,7 @@ int main(int argc, char *argv[]) {
 	  log_manager.writeLog("Game: Waiting for a user to connect... \n");
 	  if (networkManager.accept(port)) {
 		  log_manager.writeLog("Game: Fatal Error listening for clients");
+		  game_manager.shutDown();
 		  return 0;
 	  }
 	  HostStatus::setHost(new Host());
@@ -104,6 +105,7 @@ int main(int argc, char *argv[]) {
 	  log_manager.writeLog("Game: Connecting to server... \n");
 	  if (networkManager.connect(hostAddress, port)) {
 		  log_manager.writeLog("Game: Fatal Error connecting to host");
+		  game_manager.shutDown();
 		  return 0;
 	  }
 	  HostStatus::setClient(new Client());

@@ -145,9 +145,14 @@ void Saucer::hit(EventCollision *p_c) {
       ((p_c -> getObject2() -> getType()) == "Hero")) {
     WorldManager &world_manager = WorldManager::getInstance();
     //TODO:: temporarily disable deleting heros
-    //world_manager.markForDelete(p_c -> getObject1());
-    //world_manager.markForDelete(p_c -> getObject2());
+    world_manager.markForDelete(p_c -> getObject1());
+    world_manager.markForDelete(p_c -> getObject2());
 
+    NetworkManager::getInstance().sendDeleteMessage(p_c->getObject1());
+    NetworkManager::getInstance().sendDeleteMessage(p_c->getObject2());
+
+
+    /*
     //TODO: for testing, delete the saucer
     Object* toDelete;
     if (p_c->getObject1()->getType() == "Saucer") {
@@ -158,7 +163,7 @@ void Saucer::hit(EventCollision *p_c) {
     }
 
     world_manager.markForDelete(toDelete);
-    NetworkManager::getInstance().sendDeleteMessage(toDelete);
+    NetworkManager::getInstance().sendDeleteMessage(toDelete);*/
 
 
   }
