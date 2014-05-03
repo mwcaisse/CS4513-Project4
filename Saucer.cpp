@@ -154,7 +154,7 @@ void Saucer::hit(EventCollision *p_c) {
     	toDelete = p_c->getObject1();
     }
     else {
-    	toDelete = p_c->getObject1();
+    	toDelete = p_c->getObject2();
     }
 
     world_manager.markForDelete(toDelete);

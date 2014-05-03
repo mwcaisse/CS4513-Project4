@@ -63,19 +63,21 @@ Hero::Hero(std::string serialized) {
 
 
 Hero::~Hero() {
+	//only do this if we are the host. otherwise die quietly
+	if (HostStatus::isHost()) {
+	  // create GameOver object
+	  GameOver *p_go = new GameOver;
 
-  // create GameOver object
-  GameOver *p_go = new GameOver;
-
-  // make big explosion
-  for (int i=-8; i<=8; i+=5) {
-    for (int j=-5; j<=5; j+=3) {
-      Position temp_pos = this->getPosition();
-      temp_pos.setX(this->getPosition().getX() + i);
-      temp_pos.setY(this->getPosition().getY() + j);
-      Explosion *p_explosion = new Explosion(temp_pos);
-    }
-  }
+	  // make big explosion
+	  for (int i=-8; i<=8; i+=5) {
+		for (int j=-5; j<=5; j+=3) {
+		  Position temp_pos = this->getPosition();
+		  temp_pos.setX(this->getPosition().getX() + i);
+		  temp_pos.setY(this->getPosition().getY() + j);
+		  Explosion *p_explosion = new Explosion(temp_pos);
+		}
+	  }
+	}
 }
 
 // handle event
