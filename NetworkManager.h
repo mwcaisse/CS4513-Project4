@@ -151,6 +151,8 @@ public:
 
 	int sendPointMessage(int points);
 
+	int sendGameOverMessage();
+
 	/** Retrieves a message from the network, will return the message in EventNetwork form
 	 * 		if a message exists. Will not do anything if a message isn't available
 	 *

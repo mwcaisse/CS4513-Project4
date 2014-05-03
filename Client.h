@@ -46,6 +46,8 @@ private:
 
 	void updatePoints(EventNetwork* event);
 
+	void gameOver(EventNetwork* event);
+
 public:
 
 	Client();

@@ -9,6 +9,9 @@
 #include "LogManager.h"
 #include "ResourceManager.h"
 #include "WorldManager.h"
+#include "HostStatus.h"
+#include "NetworkManager.h"
+#include "GameManager.h"
 
 GameOver::GameOver() {
 
@@ -32,22 +35,20 @@ GameOver::GameOver() {
   
   // register for step event
   registerInterest(STEP_EVENT);
+
+  if (HostStatus::isHost()) {
+	  if (NetworkManager::getInstance().sendGameOverMessage() == -1) {
+		  LogManager::getInstance().writeLog("GameOver::GameOver(): Failed to notify client that game is over");
+	  }
+  }
+
 }
 
 // when done, game over
 GameOver::~GameOver() {
-  WorldManager &world_manager = WorldManager::getInstance();
-
-  // remove Saucers and ViewObjects, re-activate GameStart
-  ObjectList object_list = world_manager.getAllObjects(true);
-  ObjectListIterator i(&object_list);
-  for (i.first(); !i.isDone(); i.next()) {
-    Object *p_o = i.currentObject();
-    if (p_o -> getType() == "Saucer" || p_o -> getType() == "ViewObject")
-      world_manager.markForDelete(p_o);
-    if (p_o -> getType() == "GameStart") 
-      p_o -> setActive(true);
-  }
+	//game is over, shutdown Networkmanager + game
+	NetworkManager::getInstance().shutDown();
+	GameManager::getInstance().setGameOver(true);
 }
 
 // handle event

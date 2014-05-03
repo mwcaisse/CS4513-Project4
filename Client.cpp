@@ -19,6 +19,7 @@
 #include "Explosion.h"
 #include "Points.h"
 #include "StaticIds.h"
+#include "GameOver.h"
 
 Client::Client() {
 	NetworkManager::getInstance().registerInterest(this, NETWORK_EVENT);
@@ -73,7 +74,8 @@ void Client::networkHandle(EventNetwork* event) {
 	case POINTS:
 		updatePoints(event);
 		break;
-
+	case GAME_OVER:
+		gameOver(event);
 	}
 
 }
@@ -115,6 +117,10 @@ void Client::updatePoints(EventNetwork* event) {
 	Object* obj = WorldManager::getInstance().objectWithId(POINTS_ID);
 	Points* pointsObj = static_cast<Points*>(obj);
 	pointsObj->setValue(points);
+}
+
+void Client::gameOver(EventNetwork* event) {
+	new GameOver();
 }
 
 /** Handles keyboard events

@@ -216,6 +216,11 @@ int NetworkManager::sendPointMessage(int points) {
 	return sendMessage(POINTS, "", points);
 }
 
+int NetworkManager::sendGameOverMessage() {
+	return sendMessage(GAME_OVER, "", 0);
+}
+
+
 /** Sends the specified bytes over the connected network
  *
  * @param buffer The bytes to send
