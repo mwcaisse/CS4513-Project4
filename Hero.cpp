@@ -139,6 +139,9 @@ void Hero::kbd(EventKeyboard *p_keyboard_event) {
     break;
   case 'q':			// quit
     world_manager.markForDelete(this);
+    if (NetworkManager::getInstance().sendDeleteMessage(this) == -1) {
+       	LogManager::getInstance().writeLog("Hero::Hero(): Unable to notify client of deletion");
+    }
     break;
   };
   return;
