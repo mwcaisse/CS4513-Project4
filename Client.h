@@ -38,15 +38,42 @@ private:
 
 	void stepHandle(EventStep* event);
 
+	/** Helper function to create a new object as defined in the event
+	 * 	@param event The network event
+	 */
+
 	void createObject(EventNetwork* event);
+
+	/** Helper function to update the specified object
+	 * 	@param event The network event
+	 */
 
 	void updateObject(EventNetwork* event);
 
+	/** Helper function to delete the specified object
+	 *  @param event The network event
+	 */
+
 	void deleteObject(EventNetwork* event);
+
+	/** Helper function to update the points
+	 * 	@param event The network event
+	 */
 
 	void updatePoints(EventNetwork* event);
 
+	/** Helper function to notify that the game is over
+	 *  @param event The network event
+	 */
+
 	void gameOver(EventNetwork* event);
+
+	/** Helper function to notify that the game is starting
+	 * 	@param event The network event
+	 *
+	 */
+
+	void gameStart(EventNetwork* event);
 
 public:
 

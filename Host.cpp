@@ -14,6 +14,8 @@
 #include "EventStep.h"
 #include "ClientHero.h"
 #include "ObjectListIterator.h"
+#include "StaticIds.h"
+#include "GameStart.h"
 
 Host::Host() {
 	NetworkManager::getInstance().registerInterest(this, NETWORK_EVENT);
@@ -55,6 +57,11 @@ void Host::networkHandle(EventNetwork* event) {
 		LogManager &log_manager = LogManager::getInstance();
 		log_manager.writeLog("Host::networkHandle: received a keystroke from the client: %d", key);
 		clientHero->keyboard(key);
+	}
+	if (event->getOperation() == GAME_START) {
+		Object* obj = WorldManager::getInstance().objectWithId(GAME_START_ID);
+		GameStart* gameStartObj = static_cast<GameStart*>(obj);
+		gameStartObj->startOther();
 	}
 }
 
