@@ -124,6 +124,9 @@ int ClientHero::keyboard(int key) {
     break;*/
   case 'q':			// quit
     world_manager.markForDelete(this);
+    if (NetworkManager::getInstance().sendDeleteMessage(this) == -1) {
+    	LogManager::getInstance().writeLog("ClientHero::ClientHero(): Unable to notify client of deletion");
+    }
     return 2;
     break;
   default:
