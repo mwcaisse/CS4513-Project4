@@ -27,30 +27,40 @@ GAMESRC= Saucer.cpp \
          GameStart.cpp \
          GameOver.cpp \
          Hero.cpp \
-         NetworkManager.cpp \
-         EventNetwork.cpp \
-         NetworkSentry.cpp \
-         Host.cpp \
-         Client.cpp \
-         HostStatus.cpp \
-         ClientHero.cpp
+         ClientHero.cpp \
+ 		 Host.cpp \
+	     Client.cpp \
+	  	 HostStatus.cpp 
+         
+NETWORKSRC = NetworkManager.cpp \
+			  EventNetwork.cpp \
+			  NetworkSentry.cpp
+
          
 GAME= game.cpp
+
+NETWORK= libnetwork.a
+
 EXECUTABLE= game		
 OBJECTS= $(GAMESRC:.cpp=.o)
 
-all: $(EXECUTABLE) Makefile
+NETWORKO= $(NETWORKSRC:.cpp=.o)
 
-$(EXECUTABLE): $(ENG) $(OBJECTS) $(GAME) $(GAMESRC) 
-	$(CC) $(GAME) $(OBJECTS) $(ENG) $(PLATFORM) -o $@ -I$(INCPATH) $(LDFLAGS) 
+all: $(EXECUTABLE) $(NETWORK) Makefile
+
+$(EXECUTABLE): $(ENG) $(NETWORK) $(OBJECTS) $(GAME) $(GAMESRC) 
+	$(CC) $(GAME) $(OBJECTS) $(ENG) $(NETWORK) $(PLATFORM) -o $@ -I$(INCPATH) $(LDFLAGS) 
 	
 	cp ./game ./tst/
+
+$(NETWORK): $(NETWORKO) $(NETWORKSRC)
+	ar rcs $(NETWORK) $(NETWORKO)
 
 .cpp.o: 
 	$(CC) -c $(DEBUG) -I$(INCPATH) $(PLATFORM) $< -o $@
 
 clean:
-	rm -rf $(OBJECTS) $(EXECUTABLE) core dragonfly.log Makefile.bak *~
+	rm -rf $(OBJECTS) $(NETWORKO) $(EXECUTABLE) $(NETWORK) core dragonfly.log Makefile.bak *~
 
 depend: 
 	makedepend *.cpp 2> /dev/null
