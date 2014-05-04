@@ -28,6 +28,7 @@ NetworkManager NetworkManager::_instance;
 NetworkManager::NetworkManager() {
 	//create a new network manager
 	sock = -1;
+	statistics = false;
 	sentry = new NetworkSentry();
 }
 
@@ -40,8 +41,10 @@ NetworkManager& NetworkManager::getInstance() {
  *
  */
 
-int NetworkManager::startUp() {
+int NetworkManager::startUp(bool statistics) {
+	this->statistics = statistics;
 	sock = -1;
+	networkStats = new NetworkStats();
 	LogManager::getInstance().writeLog("Network manager started");
 	return 0;
 }
@@ -53,6 +56,9 @@ int NetworkManager::startUp() {
 void NetworkManager::shutDown() {
 	if (isConnected()) {
 		close();
+	}
+	if (statistics) {
+		delete networkStats;
 	}
 	LogManager::getInstance().writeLog("Network manager stopped");
 }
@@ -146,12 +152,12 @@ int NetworkManager::close() {
 }
 
 /** Sends the specified message over the network
-	 *  @param op The message Operation
-	 *  @param objectType the object type of the message
-	 *  @param misc The option field of the header
-	 *  @param body the message body
-	 *  @return The number of bytes sent, or -1 if error occurred
-	 */
+ *  @param op The message Operation
+ *  @param objectType the object type of the message
+ *  @param misc The option field of the header
+ *  @param body the message body
+ *  @return The number of bytes sent, or -1 if error occurred
+ */
 
 int NetworkManager::sendMessage(MessageOp op, std::string objectType, int misc, std::string body) {
 	if (!isConnected() || objectType.length() >= OBJECT_TYPE_LEN) {
@@ -185,6 +191,43 @@ int NetworkManager::sendMessage(MessageOp op, std::string objectType, int misc, 
 
 	return send(buffer, length);
 
+}
+
+/** Sends a message with raw data types
+ * 	@param op The message Operation
+ * 	@param objectType A pointer to an array containing the raw objectType bytes
+ * 	@param objectTypeLen The length of the objectType
+ * 	@param misc The misc int
+ * 	@param body A pointer to an array containing the raw bytes of the body (optional)
+ * 	@param bodyLen The length of the body (optional)
+ * 	@return THe number of bytes sent, or -1 if error occured
+ */
+
+
+int NetworkManager::sendMessageRaw(MessageOp op, void* objectType, int objectTypeLen, int misc, void* body, int bodyLen) {
+	if (!isConnected() || objectTypeLen >= OBJECT_TYPE_LEN) {
+		//if we are not connected, or message is too long return
+		return -1;
+	}
+
+	message_header header; // the message header
+	header.op = op;
+	header.len = bodyLen;
+	header.misc = misc;
+
+	memcpy(header.object_type, objectType, objectTypeLen);
+
+	//set the length, header length + body length
+	int length = sizeof(header) + header.len; //for string null terminator
+	char buffer[length];
+
+	memcpy(buffer, (void*) &header, sizeof(header));
+	//check if this message has a body, if so append
+	if (bodyLen > 0) {
+		memcpy(buffer + sizeof(header), body, bodyLen);
+	}
+
+	return send(buffer, length);
 }
 
 int NetworkManager::sendCreateMessage(Object* obj) {

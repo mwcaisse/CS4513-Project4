@@ -9,13 +9,14 @@
 #define NETWORKMANAGER_H_
 
 #include "Manager.h"
+#include "NetworkStats.h"
 
 
 #define DRAGONFLY_PORT "9876"
 
 #define OBJECT_TYPE_LEN 20
 
-enum MessageOp {CREATE = 0, UPDATE = 1, DELETE = 2, KEYSTK = 3, GAME_OVER = 4, POINTS = 5, GAME_START = 6, QUIT = 7};
+enum MessageOp {CREATE = 0, UPDATE = 1, DELETE = 2, KEYSTK = 3, GAME_OVER = 4, POINTS = 5, GAME_START = 6, QUIT = 7, TIME = 8};
 
 struct _network_message_header {
 	int op; // The operation this message is performing
@@ -33,6 +34,12 @@ class NetworkManager : public Manager {
 
 
 private:
+
+	/** The network stats */
+	NetworkStats* networkStats;
+
+	/** Whether or not we are keep statistics */
+	bool statistics;
 
 	NetworkManager();
 
@@ -86,7 +93,7 @@ public:
 	 *
 	 */
 
-	int startUp();
+	int startUp(bool statistics = false);
 
 	/** Shuts down the network manager
 	 *
@@ -130,6 +137,18 @@ public:
 	 */
 
 	int sendMessage(MessageOp op, std::string objectType, int misc, std::string body = "");
+
+	/** Sends a message with raw data types
+	 * 	@param op The message Operation
+	 * 	@param objectType A pointer to an array containing the raw objectType bytes
+	 * 	@param objectTypeLen The length of the objectType
+	 * 	@param misc The misc int
+	 * 	@param body A pointer to an array containing the raw bytes of the body (optional)
+	 * 	@param bodyLen The length of the body (optional)
+	 * 	@return THe number of bytes sent, or -1 if error occured
+	 */
+
+	int sendMessageRaw(MessageOp op, void* objectType, int objectTypeLen, int misc, void* body = NULL, int bodyLen = 0);
 
 
 	/** Helper function to send a new Object Create message
