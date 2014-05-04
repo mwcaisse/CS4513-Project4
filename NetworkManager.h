@@ -14,7 +14,7 @@
 
 #define DRAGONFLY_PORT "9876"
 
-#define OBJECT_TYPE_LEN 20
+#define OBJECT_TYPE_LEN 30
 
 enum MessageOp {CREATE = 0, UPDATE = 1, DELETE = 2, KEYSTK = 3, GAME_OVER = 4, POINTS = 5, GAME_START = 6, QUIT = 7, TIME = 8};
 
@@ -137,19 +137,6 @@ public:
 	 */
 
 	int sendMessage(MessageOp op, std::string objectType, int misc, std::string body = "");
-
-	/** Sends a message with raw data types
-	 * 	@param op The message Operation
-	 * 	@param objectType A pointer to an array containing the raw objectType bytes
-	 * 	@param objectTypeLen The length of the objectType
-	 * 	@param misc The misc int
-	 * 	@param body A pointer to an array containing the raw bytes of the body (optional)
-	 * 	@param bodyLen The length of the body (optional)
-	 * 	@return THe number of bytes sent, or -1 if error occured
-	 */
-
-	int sendMessageRaw(MessageOp op, void* objectType, int objectTypeLen, int misc, void* body = NULL, int bodyLen = 0);
-
 
 	/** Helper function to send a new Object Create message
 	 *  @param obj The object to create

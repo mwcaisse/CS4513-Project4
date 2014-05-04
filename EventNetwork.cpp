@@ -31,6 +31,10 @@ int EventNetwork::getLength() {
 	return length;
 }
 
+int EventNetwork::getTotalLength() {
+	return length + sizeof(message_header);
+}
+
 /** Returns the operation of the message
  *
  */

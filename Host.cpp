@@ -77,27 +77,9 @@ void Host::networkHandle(EventNetwork* event) {
  */
 
 void Host::stepHandle(EventStep* event) {
-	/*WorldManager& worldManager = WorldManager::getInstance();
-	NetworkManager& networkManager = NetworkManager::getInstance();
+	if (event->getStepCount() % 30 == 0) {
 
-	ObjectList objectList = worldManager.getAllObjects();
-	ObjectListIterator* objectItr = new ObjectListIterator(&objectList);
-
-	objectItr->first(); // set it to the first object
-
-	while (!objectItr->isDone()) {
-
-		Object* obj = objectItr->currentObject();
-
-		//if the object was modified, and it is a bullet or saucer
-		if ( obj->isModified() && (obj->getType() == "Bullet" || obj->getType() == "Saucer")) {
-			networkManager.sendUpdateMessage(obj);
-		}
-
-		objectItr->next();
-	}*/
-
-
+	}
 }
 
 /** Initializes the host for the gamestart

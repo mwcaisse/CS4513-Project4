@@ -34,7 +34,8 @@ GAMESRC= Saucer.cpp \
          
 NETWORKSRC = NetworkManager.cpp \
 			  EventNetwork.cpp \
-			  NetworkSentry.cpp
+			  NetworkSentry.cpp \
+			  NetworkStats.cpp
 
          
 GAME= game.cpp

@@ -60,7 +60,6 @@ int Client::eventHandler(Event* ev_p) {
  */
 
 void Client::networkHandle(EventNetwork* event) {
-
 	//find out what event it was, client shouldn't get keystroke events
 	switch (event->getOperation()) {
 

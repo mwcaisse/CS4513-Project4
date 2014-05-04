@@ -20,6 +20,7 @@ private:
 
 	/** The length of the network data */
 	int length;
+
 	/** The operation to perform */
 	MessageOp operation;
 	/** The type of object if applicable */
@@ -43,6 +44,12 @@ public:
 	 */
 
 	int getLength();
+
+	/** Returns the total length of the message, including the header
+	 *
+	 */
+
+	int getTotalLength();
 
 	/** Returns the operation of the message
 	 *

@@ -193,43 +193,6 @@ int NetworkManager::sendMessage(MessageOp op, std::string objectType, int misc, 
 
 }
 
-/** Sends a message with raw data types
- * 	@param op The message Operation
- * 	@param objectType A pointer to an array containing the raw objectType bytes
- * 	@param objectTypeLen The length of the objectType
- * 	@param misc The misc int
- * 	@param body A pointer to an array containing the raw bytes of the body (optional)
- * 	@param bodyLen The length of the body (optional)
- * 	@return THe number of bytes sent, or -1 if error occured
- */
-
-
-int NetworkManager::sendMessageRaw(MessageOp op, void* objectType, int objectTypeLen, int misc, void* body, int bodyLen) {
-	if (!isConnected() || objectTypeLen >= OBJECT_TYPE_LEN) {
-		//if we are not connected, or message is too long return
-		return -1;
-	}
-
-	message_header header; // the message header
-	header.op = op;
-	header.len = bodyLen;
-	header.misc = misc;
-
-	memcpy(header.object_type, objectType, objectTypeLen);
-
-	//set the length, header length + body length
-	int length = sizeof(header) + header.len; //for string null terminator
-	char buffer[length];
-
-	memcpy(buffer, (void*) &header, sizeof(header));
-	//check if this message has a body, if so append
-	if (bodyLen > 0) {
-		memcpy(buffer + sizeof(header), body, bodyLen);
-	}
-
-	return send(buffer, length);
-}
-
 int NetworkManager::sendCreateMessage(Object* obj) {
 	return sendMessage(CREATE, obj->getType(), obj->getId(), obj->serialize());
 }
