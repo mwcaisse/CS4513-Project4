@@ -1,23 +1,89 @@
-SAUCER SHOOT
+Mitchell Caisse
+mwcaisse
+CS4513
+Project 4
 
-Final version of Saucer Shoot game from Dragonfly tutorial.
+How to Build:
 
-To build:
+	Before building please make sure the ENG variable in the Makefile contains the correct path to the 
+		dragon fly engine for the platform. Also make sure that INCPATH contains the correct path to
+		the header / include files for the dragon fly engine.
 
-0) Make sure you have appropriate development environment.
-See: http://dragonfly.wpi.edu/engine/ for details.
+	make
+		Will build both the network manager library and Saucer Shoot 2
+		
+	make game
+		Will build Saucer Shoot 2, and libnetwork.a if it doesn't exist, as it is
+			a dependency
+	make libnetwork.a
+		Will build the network manager library
 
-1) Modify Makefile as appropriate for platform
-+ Uncommend PLATFORM line if on cygwin
-+ Set INCPATH to point to location of Dragonfly include files
-+ Set ENG to point to location of Dragonfly engine
+	make clean
+		Will remove all of the build files, including log files, executables, objects, and libnetwork.a
+		
+How to Run:
 
-2) Type "make depend" to build appropriate dependencies
+	Usage:
+		./game -h hostname -p portnumber -n
+			
+			-h runs the game in client mode, and specifies the host name to connect to
+			
+			-p specifies the port to connect to / listen on
+			
+			-n If given starts with network statistics set to true
+			
+	Example Client:
+		
+		./game -h ccc3.wpi.edu
+			Will launch the game as a client and connect to the host running on ccc3.wpi.edu
+			
+	Example Host:
+	
+		./game
+			Will launch the game as a host, and listen on the default port
+			
+Code Structure:
 
-3) Type "make clean" to remove any stale files
-
-4) Type "make" to build
-
-5) Type "game" to run
-
-Happy shooting!
+	Network Library:
+	
+		NetworkManager:
+			Contains all of the network specific code for communicating between host and client
+			Defines a message protocol for communication, as seen below
+				msg-header:
+					int opcode         //operation code of the message
+					int len            //length of the message body
+					int misc           //misc int for various settings
+					char* objectType   //a 30 byte long string
+				msg-body: The body of the message, variable length specified in header
+			Contains methods to send and retrieve messages from the network
+			Starts and initializes the connection between the host and client
+		
+		NetworkSentry:
+			Polls the network manager for data and creates network events when data arrives
+				
+		EventNetwork:
+			Internal representation of the message, contains all of the information in the header, and is used to
+				communicate messages to objects in the game engine
+		
+		NetworkStats:
+			Game Engine object that collects statistics on the currently open network, such as
+				throughput and RTT between client and host.
+			Can be enabled / disabled
+			
+	Game Code:
+	
+		Host:
+			Host game object which responds to network messages sent from the client and takes appropriate action
+			
+		Client:
+			Client game object which responds to network messages sent from the host and takes appropriate action
+			
+		HostStatus:
+			Maintains whether the game is running in host mode or client mode
+			Contains pointers to the respective Client and Host objects.
+			
+		ClientHero:
+			A copy of the Hero which runs on the host only, Represents the client's hero.
+			All key strokes received by the host get sent to this object.
+			
+		
