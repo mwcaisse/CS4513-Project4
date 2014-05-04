@@ -32,10 +32,10 @@ NetworkStats::~NetworkStats() {
 	LogManager& logManager = LogManager::getInstance();
 
 	logManager.writeLog("Total Messages received %d", totalMessagesRecv);
-	logManager.writeLog("Average Message Size: %f", ((float) totalBytes / (float) totalMessagesRecv));
+	logManager.writeLog("Average Message Size: %f bytes", ((float) totalBytes / (float) totalMessagesRecv));
 
-	logManager.writeLog("Total Bytes received %d", totalBytes);
-	logManager.writeLog("Average bytes/sec: %f", ((float) totalBytes / (float) totalSeconds));
+	logManager.writeLog("Total Bytes received %d bytes", totalBytes);
+	logManager.writeLog("Average throughput: %f bytes/sec", ((float) totalBytes / (float) totalSeconds));
 }
 
 

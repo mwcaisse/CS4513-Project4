@@ -40,10 +40,11 @@ int main(int argc, char *argv[]) {
 	char c;
 
 	bool isHost = true;
+	bool networkStats = false;
 	std::string hostAddress;
 	std::string port;
 
-	while ( (c = getopt(argc, argv, "h:p:")) != EOF) {
+	while ( (c = getopt(argc, argv, "h:p:n")) != EOF) {
 		switch (c) {
 
 		case 'h':
@@ -54,6 +55,9 @@ int main(int argc, char *argv[]) {
 		case 'p':
 			//set the port
 			port = optarg;
+			break;
+		case 'n':
+			networkStats = true;
 			break;
 		default:
 			print_usage();
@@ -90,7 +94,7 @@ int main(int argc, char *argv[]) {
   //lets start the network?
   NetworkManager& networkManager = NetworkManager::getInstance();
 
-  networkManager.startUp();
+  networkManager.startUp(networkStats);
 
   if (HostStatus::isHost()) {
 	  log_manager.writeLog("Game: Waiting for a user to connect... \n");

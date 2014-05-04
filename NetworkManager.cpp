@@ -19,6 +19,7 @@
 #include <sys/ioctl.h>
 
 #include "NetworkManager.h"
+#include "WorldManager.h"
 #include "EventNetwork.h"
 #include "NetworkSentry.h"
 #include "LogManager.h"
@@ -44,7 +45,9 @@ NetworkManager& NetworkManager::getInstance() {
 int NetworkManager::startUp(bool statistics) {
 	this->statistics = statistics;
 	sock = -1;
-	networkStats = new NetworkStats();
+	if (statistics) {
+		networkStats = new NetworkStats();
+	}
 	LogManager::getInstance().writeLog("Network manager started");
 	return 0;
 }
@@ -58,7 +61,7 @@ void NetworkManager::shutDown() {
 		close();
 	}
 	if (statistics) {
-		delete networkStats;
+		WorldManager::getInstance().markForDelete(networkStats);
 	}
 	LogManager::getInstance().writeLog("Network manager stopped");
 }
