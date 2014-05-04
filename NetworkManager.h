@@ -15,7 +15,7 @@
 
 #define OBJECT_TYPE_LEN 20
 
-enum MessageOp {CREATE = 0, UPDATE = 1, DELETE = 2, KEYSTK = 3, GAME_OVER = 4, POINTS = 5, GAME_START = 6};
+enum MessageOp {CREATE = 0, UPDATE = 1, DELETE = 2, KEYSTK = 3, GAME_OVER = 4, POINTS = 5, GAME_START = 6, QUIT = 7};
 
 struct _network_message_header {
 	int op; // The operation this message is performing
@@ -173,6 +173,12 @@ public:
 	 */
 
 	int sendGameStartMessage();
+
+	/** Helper function to send the quit message
+	 *
+	 */
+
+	int sendQuitMessage();
 
 	/** Retrieves a message from the network, will return the message in EventNetwork form
 	 * 		if a message exists. Will not do anything if a message isn't available

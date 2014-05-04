@@ -215,6 +215,9 @@ int NetworkManager::sendGameStartMessage() {
 	return sendMessage(GAME_START, "", 0);
 }
 
+int NetworkManager::sendQuitMessage() {
+	return sendMessage(QUIT, "", 0);
+}
 
 /** Sends the specified bytes over the connected network
  *

@@ -54,7 +54,10 @@ int GameStart::eventHandler(Event *p_e) {
     case 'p': 			// play
       start();
       break;
-    case 'q':			// quit
+    case 'q':		// quit
+      if (NetworkManager::getInstance().sendQuitMessage() == -1) {
+    	  LogManager::getInstance().writeLog("GameStart::eventHandler(): Unable to send quit message");
+      }
       game_manager.setGameOver();
       break;
     default:

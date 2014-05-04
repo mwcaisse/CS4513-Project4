@@ -16,6 +16,7 @@
 #include "ObjectListIterator.h"
 #include "StaticIds.h"
 #include "GameStart.h"
+#include "GameManager.h"
 
 Host::Host() {
 	NetworkManager::getInstance().registerInterest(this, NETWORK_EVENT);
@@ -61,10 +62,13 @@ void Host::networkHandle(EventNetwork* event) {
 		}
 
 	}
-	if (event->getOperation() == GAME_START) {
+	else if (event->getOperation() == GAME_START) {
 		Object* obj = WorldManager::getInstance().objectWithId(GAME_START_ID);
 		GameStart* gameStartObj = static_cast<GameStart*>(obj);
 		gameStartObj->startOther();
+	}
+	else if (event->getOperation() == QUIT) {
+		GameManager::getInstance().setGameOver();
 	}
 }
 

@@ -21,6 +21,7 @@
 #include "StaticIds.h"
 #include "GameOver.h"
 #include "GameStart.h"
+#include "GameManager.h"
 
 Client::Client() {
 	NetworkManager::getInstance().registerInterest(this, NETWORK_EVENT);
@@ -77,8 +78,13 @@ void Client::networkHandle(EventNetwork* event) {
 		break;
 	case GAME_OVER:
 		gameOver(event);
+		break;
 	case GAME_START:
 		gameStart(event);
+		break;
+	case QUIT:
+		GameManager::getInstance().setGameOver();
+		break;
 	}
 
 }
