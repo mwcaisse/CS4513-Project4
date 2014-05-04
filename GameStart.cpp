@@ -139,7 +139,18 @@ void GameStart::start() {
 		else if (status == NONE) {
 			//we pressed ready, and client wasn't ready, set status to me, and change sprite
 			status = ME;
-			//TODO: update the sprite
+
+			Sprite *p_temp_sprite = ResourceManager::getInstance().getSprite("gamestartwait");
+			if (!p_temp_sprite) {
+				LogManager &log_manager = LogManager::getInstance();
+				log_manager.writeLog("GameStart::GameStart(): Warning! Sprite 'gamestartwait' not found");
+			}
+			else {
+				setSprite(p_temp_sprite);
+				setSpriteSlowdown(15);
+			}
+
+
 		}
 
 	}
@@ -150,7 +161,15 @@ void GameStart::start() {
 			if (NetworkManager::getInstance().sendGameStartMessage() == -1) {
 				LogManager::getInstance().writeLog("GameStart::start(): Couldn't send ready message to host");
 			}
-			//TODO: update the sprite
+			Sprite *p_temp_sprite = ResourceManager::getInstance().getSprite("gamestartwait");
+			if (!p_temp_sprite) {
+				LogManager &log_manager = LogManager::getInstance();
+				log_manager.writeLog("GameStart::GameStart(): Warning! Sprite 'gamestartwait' not found");
+			}
+			else {
+				setSprite(p_temp_sprite);
+				setSpriteSlowdown(15);
+			}
 		}
 
 	}
