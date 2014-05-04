@@ -222,6 +222,10 @@ int NetworkManager::sendGameOverMessage() {
 	return sendMessage(GAME_OVER, "", 0);
 }
 
+int NetworkManager::sendGameStartMessage() {
+	return sendMessage(GAME_START, "", 0);
+}
+
 
 /** Sends the specified bytes over the connected network
  *

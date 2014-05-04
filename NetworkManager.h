@@ -15,7 +15,7 @@
 
 #define OBJECT_TYPE_LEN 20
 
-enum MessageOp {CREATE = 0, UPDATE = 1, DELETE = 2, KEYSTK = 3, GAME_OVER = 4, POINTS = 5};
+enum MessageOp {CREATE = 0, UPDATE = 1, DELETE = 2, KEYSTK = 3, GAME_OVER = 4, POINTS = 5, GAME_START = 6};
 
 struct _network_message_header {
 	int op; // The operation this message is performing
@@ -141,17 +141,47 @@ public:
 
 	int sendMessage(MessageOp op, std::string objectType, int misc);
 
+	/** Helper function to send a new Object Create message
+	 *  @param obj The object to create
+	 */
+
 	int sendCreateMessage(Object* obj);
+
+	/** Helper function to send a new Object Update message
+	 * 	@param obj The object to update
+	 */
 
 	int sendUpdateMessage(Object* obj);
 
+	/** Helper function to send a new Object Delete message
+	 *  @param obj The object to delete
+	 */
+
 	int sendDeleteMessage(Object* obj);
+
+	/** Helper function to send a new Key stroke message
+	 *  @param key The key code of the key pressed
+	 */
 
 	int sendKeyMessage(int key);
 
+	/** Helper function to send the current points value
+	 * 	@param points The current points value
+	 */
+
 	int sendPointMessage(int points);
 
+	/** Helper function to notify that the game is over
+	 *
+	 */
+
 	int sendGameOverMessage();
+
+	/** Helper function to notify that a client is ready to start, or the host is starting the game
+	 *
+	 */
+
+	int sendGameStartMessage();
 
 	/** Retrieves a message from the network, will return the message in EventNetwork form
 	 * 		if a message exists. Will not do anything if a message isn't available

@@ -9,13 +9,23 @@
 
 class GameStart : public ViewObject {
 
+	/** The ready status of the game */
+	enum ReadyStatus { NONE, ME, OTHER, BOTH };
+
  private:
-  void step();
+
+	/** The game start's status */
+	ReadyStatus status;
+
+  void startGame();
   void start();
+
+  void step();
 
  public:
   GameStart();
   int eventHandler(Event *e);
   void draw();
+  void startOther();
 };
 
