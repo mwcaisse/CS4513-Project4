@@ -21,7 +21,7 @@ class ClientHero : public Object {
   ~ClientHero();
 
   // call move (or do nothing) according to key pressed
-  void keyboard(int key);
+  int keyboard(int key);
 
   //event handler for step event
   int eventHandler(Event *p_e);

@@ -51,6 +51,12 @@ public:
 
 	void startGame();
 
+	/** Notifies the host that the client hero was deleted
+	 *
+	 */
+
+	void clientHeroDeleted();
+
 };
 
 #endif /* HOST_H_ */

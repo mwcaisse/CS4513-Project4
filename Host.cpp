@@ -54,9 +54,12 @@ void Host::networkHandle(EventNetwork* event) {
 		//this was a keystroke, otherwise host doesn't do anything
 		int key = event->getMiscInt();
 
-		LogManager &log_manager = LogManager::getInstance();
-		log_manager.writeLog("Host::networkHandle: received a keystroke from the client: %d", key);
-		clientHero->keyboard(key);
+		//LogManager &log_manager = LogManager::getInstance();
+		//log_manager.writeLog("Host::networkHandle: received a keystroke from the client: %d", key);
+		if (clientHero) {
+			clientHero->keyboard(key);
+		}
+
 	}
 	if (event->getOperation() == GAME_START) {
 		Object* obj = WorldManager::getInstance().objectWithId(GAME_START_ID);
@@ -99,5 +102,9 @@ void Host::stepHandle(EventStep* event) {
 
 void Host::startGame() {
 	clientHero = new ClientHero();
+}
+
+void Host::clientHeroDeleted() {
+	clientHero = NULL;
 }
 

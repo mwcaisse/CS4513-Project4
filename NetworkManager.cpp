@@ -154,7 +154,8 @@ int NetworkManager::close() {
 	 */
 
 int NetworkManager::sendMessage(MessageOp op, std::string objectType, int misc, std::string body) {
-	if (objectType.length() >= OBJECT_TYPE_LEN) {
+	if (!isConnected() || objectType.length() >= OBJECT_TYPE_LEN) {
+		//if we are not connected, or message is too long return
 		return -1;
 	}
 
@@ -184,18 +185,6 @@ int NetworkManager::sendMessage(MessageOp op, std::string objectType, int misc, 
 
 	return send(buffer, length);
 
-}
-
-/** Sends the specified message over the network
- *
- *	@param op The message Operation
- *	@param objectType The object type of the message
- *	@param misc The misc field
- *	@return The number of bytes sent, or -1 if error occurred
- */
-
-int NetworkManager::sendMessage(MessageOp op, std::string objectType, int misc) {
-	return sendMessage(op, objectType, misc, "");
 }
 
 int NetworkManager::sendCreateMessage(Object* obj) {

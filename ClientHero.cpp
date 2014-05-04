@@ -19,6 +19,7 @@
 #include "ClientHero.h"
 #include "HostStatus.h"
 #include "NetworkManager.h"
+#include "Host.h"
 
 ClientHero::ClientHero() {
 
@@ -101,7 +102,7 @@ int ClientHero::eventHandler(Event *p_e) {
 }
 
 // call move (or do nothing) according to key pressed
-void ClientHero::keyboard(int key) {
+int ClientHero::keyboard(int key) {
   WorldManager &world_manager = WorldManager::getInstance();
   LogManager& logManager = LogManager::getInstance();
 
@@ -122,12 +123,14 @@ void ClientHero::keyboard(int key) {
     break;*/
   case 'q':			// quit
     world_manager.markForDelete(this);
+    HostStatus::getHost()->clientHeroDeleted();
+    return 2;
     break;
   default:
 	  logManager.writeLog("ClientHero::keyboard() Switch fell through");
 	  break;
   };
-  return;
+  return 1;
 }
 
 // move up or down

@@ -129,17 +129,8 @@ public:
 	 *  @return The number of bytes sent, or -1 if error occurred
 	 */
 
-	int sendMessage(MessageOp op, std::string objectType, int misc, std::string body);
+	int sendMessage(MessageOp op, std::string objectType, int misc, std::string body = "");
 
-	/** Sends the specified message over the network
-	 *
-	 *	@param op The message Operation
-	 *	@param objectType The object type of the message
-	 *	@param misc The misc field
-	 *	@return The number of bytes sent, or -1 if error occurred
-	 */
-
-	int sendMessage(MessageOp op, std::string objectType, int misc);
 
 	/** Helper function to send a new Object Create message
 	 *  @param obj The object to create
