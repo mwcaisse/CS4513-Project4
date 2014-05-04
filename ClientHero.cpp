@@ -61,6 +61,7 @@ ClientHero::ClientHero(std::string serialized) {
 
 
 ClientHero::~ClientHero() {
+	HostStatus::getHost()->clientHeroDeleted();
 
 	bool gameOverExists = false;
 
@@ -123,7 +124,6 @@ int ClientHero::keyboard(int key) {
     break;*/
   case 'q':			// quit
     world_manager.markForDelete(this);
-    HostStatus::getHost()->clientHeroDeleted();
     return 2;
     break;
   default:

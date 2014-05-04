@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
 
   // Start up Game Manager
   GameManager &game_manager = GameManager::getInstance();
-  if (game_manager.startUp())  {
+  if (game_manager.startUp(true))  {
     log_manager.writeLog("Error starting game manager!");
     game_manager.shutDown();
     return 0;
