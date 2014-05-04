@@ -59,7 +59,8 @@ void NetworkStats::networkEvent(EventNetwork* event) {
 			int sentTime = atoi(event->getObjectType().c_str());
 
 			int timeDiff = getCurrentTime() - sentTime;
-			LogManager::getInstance().writeLog("NetworkStats::networkEvent(): recv time msg, RTT: %d", timeDiff);
+			LogManager::getInstance().writeLog("NetworkStats::networkEvent(): recv time msg, RTT: %f ms",
+					((float)timeDiff) / 1000.0f);
 		}
 		else {
 			//this message was sent by someone else, forward it back to other
