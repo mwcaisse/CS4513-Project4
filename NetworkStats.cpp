@@ -82,6 +82,10 @@ void NetworkStats::stepEvent(EventStep* event) {
 		LogManager::getInstance().writeLog("NetworkStats::stepEvent(): Recv: %d bytes/sec", numBytes);
 		numBytes = 0;
 	}
+	if (event->getStepCount() % 60 == 0) {
+		//send a RTT every 2 seconds
+		sendTimeMessage();
+	}
 }
 
 int NetworkStats::getCurrentTime() {
