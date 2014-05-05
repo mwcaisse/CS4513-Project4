@@ -1,0 +1,908 @@
+14:00:54    0 *****************************************************
+14:00:54    0 ** Dragonfly version 2.7 **
+14:00:54    0 Log Manager started 
+14:00:54    0 GraphicsManager::startUp(): Terminal supports color.
+14:00:54    0 Graphics manager started
+14:00:54    0 Input manager started
+14:00:54    0 Resource manager started
+14:00:54    0 World manager started
+14:00:54    0 Game: Starting as client, connecting to ccc3.wpi.edu 
+
+14:00:54    0 NetworkStats::NetworkStats(): MSG ID: 1372451707
+14:00:54    0 Network manager started
+14:00:54    0 Game: Connecting to server... 
+
+14:00:54    0 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:00:55    3 NetworkStats::networkEvent(): recv time msg, RTT: 98.897003 ms
+14:00:55   30 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:00:56   60 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:00:56   62 NetworkStats::networkEvent(): recv time msg, RTT: 65.989998 ms
+14:00:57    0 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:00:57    2 NetworkStats::networkEvent(): Recv a message, size: 413
+14:00:57    2 NetworkStats::networkEvent(): Recv a message, size: 406
+14:00:57    2 NetworkStats::networkEvent(): Recv a message, size: 413
+14:00:57    2 NetworkStats::networkEvent(): Recv a message, size: 410
+14:00:57    2 NetworkStats::networkEvent(): Recv a message, size: 407
+14:00:57    2 NetworkStats::networkEvent(): Recv a message, size: 414
+14:00:57    2 NetworkStats::networkEvent(): Recv a message, size: 408
+14:00:57    2 NetworkStats::networkEvent(): Recv a message, size: 413
+14:00:57    3 NetworkStats::networkEvent(): Recv a message, size: 409
+14:00:57    3 NetworkStats::networkEvent(): Recv a message, size: 409
+14:00:57    3 NetworkStats::networkEvent(): Recv a message, size: 413
+14:00:57    3 NetworkStats::networkEvent(): Recv a message, size: 414
+14:00:57    3 NetworkStats::networkEvent(): Recv a message, size: 409
+14:00:57    3 NetworkStats::networkEvent(): Recv a message, size: 409
+14:00:57    3 NetworkStats::networkEvent(): Recv a message, size: 409
+14:00:57    3 NetworkStats::networkEvent(): Recv a message, size: 408
+14:00:57    3 NetworkStats::networkEvent(): recv time msg, RTT: 99.964996 ms
+14:00:58   30 NetworkStats::stepEvent(): Recv: 6564 bytes/sec
+14:00:59   60 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:00:59   64 NetworkStats::networkEvent(): recv time msg, RTT: 131.990997 ms
+14:01:00   90 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:01  120 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:01  122 NetworkStats::networkEvent(): recv time msg, RTT: 65.981003 ms
+14:01:02  150 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:03  180 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:03  182 NetworkStats::networkEvent(): recv time msg, RTT: 65.996002 ms
+14:01:04  210 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:05  240 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:05  242 NetworkStats::networkEvent(): recv time msg, RTT: 65.995003 ms
+14:01:06  270 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:07  300 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:07  303 NetworkStats::networkEvent(): recv time msg, RTT: 99.025002 ms
+14:01:08  330 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:09  360 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:09  363 NetworkStats::networkEvent(): recv time msg, RTT: 98.989998 ms
+14:01:10  390 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:11  420 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:11  423 NetworkStats::networkEvent(): recv time msg, RTT: 98.970001 ms
+14:01:12  450 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:13  480 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:13  482 NetworkStats::networkEvent(): recv time msg, RTT: 65.996002 ms
+14:01:14  510 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:15  540 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:15  543 NetworkStats::networkEvent(): recv time msg, RTT: 98.978996 ms
+14:01:16  570 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:17  600 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:17  603 NetworkStats::networkEvent(): recv time msg, RTT: 98.969002 ms
+14:01:18  630 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:19  660 NetworkStats::stepEvent(): Recv: 0 bytes/sec
+14:01:19  662 NetworkStats::networkEvent(): recv time msg, RTT: 65.989998 ms
+14:01:19  664 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:19  664 GameStart::startGame(): Starting the game
+14:01:19  664 NetworkStats::networkEvent(): Recv a message, size: 461
+14:01:19  664 NetworkStats::networkEvent(): Recv a message, size: 434
+14:01:19  664 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:19  664 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:19  664 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:19  664 NetworkStats::networkEvent(): Recv a message, size: 438
+14:01:19  664 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:19  664 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:19  664 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:19  664 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:19  664 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:19  664 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:19  665 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:19  665 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:19  665 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:19  665 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:19  665 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:19  665 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:20  690 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:20  690 NetworkStats::stepEvent(): Recv: 8148 bytes/sec
+14:01:20  700 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:21  706 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:21  715 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:21  717 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:21  719 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:21  719 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:21  720 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:21  720 NetworkStats::stepEvent(): Recv: 1239 bytes/sec
+14:01:21  721 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:21  723 NetworkStats::networkEvent(): recv time msg, RTT: 98.985001 ms
+14:01:21  723 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:21  724 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:21  726 NetworkStats::networkEvent(): Recv a message, size: 160
+14:01:21  728 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:22  734 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:22  737 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:22  739 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:22  743 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:22  749 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:22  750 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:22  750 NetworkStats::stepEvent(): Recv: 2168 bytes/sec
+14:01:22  753 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:22  754 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:22  755 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:22  759 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:22  760 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:23  764 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:23  765 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:23  768 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:23  769 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:23  771 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:23  773 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:23  776 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:23  778 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:23  780 NetworkStats::stepEvent(): Recv: 2407 bytes/sec
+14:01:23  782 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:23  783 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:23  784 NetworkStats::networkEvent(): recv time msg, RTT: 131.917999 ms
+14:01:23  787 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:23  788 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:23  790 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:24  793 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:24  794 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:24  798 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:24  799 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:24  801 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:24  803 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:24  804 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:24  806 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:24  807 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:24  807 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:24  807 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:24  807 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:24  807 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:24  807 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:24  807 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:24  807 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:24  810 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:24  810 NetworkStats::stepEvent(): Recv: 5139 bytes/sec
+14:01:24  812 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:24  814 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:24  816 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:24  817 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:24  819 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:24  821 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:25  822 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:25  825 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:25  825 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:25  828 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:25  830 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:25  832 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:25  834 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:25  836 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:25  839 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:25  840 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:25  840 NetworkStats::stepEvent(): Recv: 3651 bytes/sec
+14:01:25  842 NetworkStats::networkEvent(): recv time msg, RTT: 65.835999 ms
+14:01:25  843 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:25  843 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:25  843 NetworkStats::networkEvent(): Recv a message, size: 444
+14:01:25  843 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:25  845 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:25  846 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:25  846 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:25  846 NetworkStats::networkEvent(): Recv a message, size: 444
+14:01:25  846 NetworkStats::networkEvent(): Recv a message, size: 438
+14:01:25  847 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:25  849 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:25  851 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:25  851 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:25  851 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:25  851 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:25  851 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:25  851 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:26  854 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:26  857 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:26  859 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:26  859 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:26  859 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:26  859 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:26  859 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:26  860 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:26  863 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:26  864 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:26  865 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:26  867 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:26  869 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:26  870 NetworkStats::stepEvent(): Recv: 6946 bytes/sec
+14:01:26  872 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:26  874 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:26  875 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:26  878 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:26  880 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:26  882 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:27  889 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:27  892 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:27  893 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:27  893 NetworkStats::networkEvent(): Recv a message, size: 444
+14:01:27  893 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:27  893 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:27  893 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:27  894 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:27  894 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:27  895 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:27  898 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:27  900 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:27  900 NetworkStats::stepEvent(): Recv: 4191 bytes/sec
+14:01:27  902 NetworkStats::networkEvent(): recv time msg, RTT: 66.036003 ms
+14:01:27  904 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:27  905 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:27  908 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:27  910 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:27  912 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:28  916 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:28  917 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:28  917 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:28  919 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:28  922 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:28  923 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:28  923 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:28  923 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:28  923 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:28  923 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:28  923 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:28  923 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:28  923 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:28  923 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:28  926 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:28  929 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:28  930 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:28  930 NetworkStats::stepEvent(): Recv: 4501 bytes/sec
+14:01:28  935 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:28  936 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:28  936 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:28  939 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:28  941 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:28  942 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:29  945 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:29  947 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:29  952 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:29  954 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:29  957 NetworkStats::networkEvent(): Recv a message, size: 160
+14:01:29  959 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:29  960 NetworkStats::stepEvent(): Recv: 2672 bytes/sec
+14:01:29  962 NetworkStats::networkEvent(): recv time msg, RTT: 66.008003 ms
+14:01:29  963 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:29  963 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:29  963 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:29  963 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:29  963 NetworkStats::networkEvent(): Recv a message, size: 160
+14:01:29  965 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:29  966 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:29  966 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:29  966 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:29  968 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:29  971 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:30  973 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:30  975 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:30  975 NetworkStats::networkEvent(): Recv a message, size: 444
+14:01:30  975 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:30  977 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:30  979 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:30  982 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:30  984 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:30  987 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:30  988 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:30  988 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:30  988 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:30  988 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:30  990 NetworkStats::stepEvent(): Recv: 5764 bytes/sec
+14:01:30  991 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:30  992 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:30  995 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:30  997 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:30  998 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:30 1000 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:30 1002 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:30 1003 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:31 1005 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:31 1007 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:31 1009 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:31 1009 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:31 1011 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:31 1012 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:31 1014 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:31 1016 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:31 1018 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:31 1020 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:31 1020 NetworkStats::stepEvent(): Recv: 3385 bytes/sec
+14:01:31 1022 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:31 1022 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:31 1022 NetworkStats::networkEvent(): Recv a message, size: 444
+14:01:31 1022 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:31 1023 NetworkStats::networkEvent(): Recv a message, size: 415
+14:01:31 1023 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:31 1024 NetworkStats::networkEvent(): recv time msg, RTT: 131.800003 ms
+14:01:31 1026 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:31 1026 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:31 1030 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:31 1031 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:32 1034 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:32 1039 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:32 1041 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:32 1043 NetworkStats::networkEvent(): Recv a message, size: 160
+14:01:32 1047 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:32 1048 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:32 1050 NetworkStats::stepEvent(): Recv: 3632 bytes/sec
+14:01:32 1051 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:32 1051 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:32 1051 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:32 1051 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:32 1053 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:32 1053 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:32 1053 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:32 1053 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:32 1053 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:32 1053 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:32 1056 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:32 1057 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:32 1057 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:32 1057 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:32 1059 NetworkStats::networkEvent(): Recv a message, size: 160
+14:01:32 1059 NetworkStats::networkEvent(): Recv a message, size: 417
+14:01:32 1062 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:33 1066 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:33 1072 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:33 1073 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:33 1075 NetworkStats::networkEvent(): Recv a message, size: 417
+14:01:33 1080 NetworkStats::stepEvent(): Recv: 5068 bytes/sec
+14:01:33 1081 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:33 1083 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:33 1083 NetworkStats::networkEvent(): recv time msg, RTT: 99.043999 ms
+14:01:33 1087 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:33 1088 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:33 1089 NetworkStats::networkEvent(): Recv a message, size: 417
+14:01:33 1089 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:33 1089 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:33 1089 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:33 1089 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:33 1092 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:33 1092 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:33 1093 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:34 1096 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:34 1096 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:34 1096 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:34 1096 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:34 1096 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:34 1099 NetworkStats::networkEvent(): Recv a message, size: 160
+14:01:34 1103 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:34 1105 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:34 1105 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:34 1105 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:34 1105 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:34 1107 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:34 1107 NetworkStats::networkEvent(): Recv a message, size: 417
+14:01:34 1110 NetworkStats::stepEvent(): Recv: 5765 bytes/sec
+14:01:34 1112 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:34 1114 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:34 1117 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:34 1121 NetworkStats::networkEvent(): Recv a message, size: 417
+14:01:34 1123 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:34 1123 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:34 1123 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:34 1123 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:34 1123 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:35 1128 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:35 1129 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:35 1129 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:35 1129 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:35 1129 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:35 1130 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:35 1130 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:35 1133 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:35 1135 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:35 1138 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:35 1138 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:35 1138 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:35 1138 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:35 1138 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:35 1138 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:35 1138 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:35 1139 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:35 1139 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:35 1140 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:35 1140 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:35 1140 NetworkStats::stepEvent(): Recv: 7157 bytes/sec
+14:01:35 1142 NetworkStats::networkEvent(): recv time msg, RTT: 65.710999 ms
+14:01:35 1143 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:35 1144 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:35 1146 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:35 1147 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:35 1151 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:35 1153 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:36 1156 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:36 1157 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:36 1159 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:36 1159 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:36 1162 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:36 1164 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:36 1166 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:36 1169 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:36 1170 NetworkStats::stepEvent(): Recv: 3062 bytes/sec
+14:01:36 1171 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:36 1171 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:36 1171 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:36 1171 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:36 1171 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:36 1174 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:36 1176 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:36 1176 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:36 1176 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:36 1176 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:36 1176 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:36 1176 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:36 1179 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:36 1179 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:36 1183 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:37 1186 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:37 1188 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:37 1188 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:37 1188 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:37 1188 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:37 1190 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:37 1192 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:37 1194 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:37 1196 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:37 1197 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:37 1197 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:37 1197 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:37 1197 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:37 1197 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:37 1198 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:37 1199 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:37 1200 NetworkStats::stepEvent(): Recv: 7375 bytes/sec
+14:01:37 1202 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:37 1203 NetworkStats::networkEvent(): recv time msg, RTT: 98.867996 ms
+14:01:37 1203 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:37 1205 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:37 1208 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:37 1210 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:37 1212 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:37 1214 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:37 1214 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:37 1215 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:37 1215 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:38 1217 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:38 1220 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:38 1221 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:38 1221 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:38 1221 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:38 1221 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:38 1223 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:38 1227 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:38 1229 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:38 1229 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:38 1230 NetworkStats::stepEvent(): Recv: 3886 bytes/sec
+14:01:38 1231 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:38 1232 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:38 1234 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:38 1234 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:38 1235 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:38 1235 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:38 1235 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:38 1235 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:38 1235 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:38 1235 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:38 1235 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:38 1235 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:38 1237 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:38 1239 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:38 1242 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:38 1244 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:39 1246 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:39 1247 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:39 1249 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:39 1251 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:39 1253 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:39 1255 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:39 1257 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:39 1258 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:39 1260 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:39 1260 NetworkStats::stepEvent(): Recv: 5747 bytes/sec
+14:01:39 1262 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:39 1263 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:39 1263 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:39 1264 NetworkStats::networkEvent(): recv time msg, RTT: 131.852997 ms
+14:01:39 1264 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:39 1265 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:39 1266 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:39 1266 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:39 1266 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:39 1266 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:39 1269 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:39 1271 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:39 1273 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:39 1274 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:39 1274 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:39 1274 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:39 1274 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:40 1276 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:40 1276 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:40 1277 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:40 1277 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:40 1277 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:40 1277 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:40 1277 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:40 1277 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:40 1277 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:40 1277 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:40 1277 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:40 1277 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:40 1277 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:40 1277 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:40 1278 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:40 1278 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:40 1278 WorldManager::markForDelete(): unable to add object (nil) to deletions list
+14:01:40 1278 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:40 1278 WorldManager::markForDelete(): unable to add object (nil) to deletions list
+14:01:40 1278 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:40 1278 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:40 1280 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:40 1281 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:40 1282 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:40 1286 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:40 1287 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:40 1288 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:40 1290 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:40 1290 NetworkStats::stepEvent(): Recv: 9479 bytes/sec
+14:01:40 1293 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:40 1295 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:40 1296 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:40 1298 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:40 1300 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:40 1301 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:40 1303 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:41 1308 NetworkStats::networkEvent(): Recv a message, size: 160
+14:01:41 1310 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:41 1310 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:41 1312 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:41 1314 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:41 1316 NetworkStats::networkEvent(): Recv a message, size: 160
+14:01:41 1320 NetworkStats::stepEvent(): Recv: 3074 bytes/sec
+14:01:41 1321 NetworkStats::networkEvent(): Recv a message, size: 160
+14:01:41 1323 NetworkStats::networkEvent(): recv time msg, RTT: 99.133003 ms
+14:01:41 1326 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:41 1329 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:41 1331 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:41 1331 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:41 1331 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:41 1331 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:41 1331 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:41 1333 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:41 1335 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:42 1337 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:42 1337 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:42 1337 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:42 1342 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:42 1344 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:42 1346 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:42 1347 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:42 1349 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:42 1350 NetworkStats::stepEvent(): Recv: 4243 bytes/sec
+14:01:42 1351 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:42 1351 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:42 1351 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:42 1353 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:42 1353 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:42 1353 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:42 1353 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:42 1353 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:42 1353 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:42 1353 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:42 1353 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:42 1353 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:42 1353 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:42 1353 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:42 1355 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:42 1355 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:42 1360 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:42 1363 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:42 1365 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:43 1367 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:43 1370 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:43 1372 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:43 1372 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:43 1372 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:43 1374 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:43 1377 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:43 1380 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:43 1380 NetworkStats::stepEvent(): Recv: 6824 bytes/sec
+14:01:43 1382 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:43 1383 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:43 1385 NetworkStats::networkEvent(): recv time msg, RTT: 164.751999 ms
+14:01:43 1387 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:43 1389 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:43 1389 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:43 1389 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:43 1389 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:43 1394 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:44 1398 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:44 1400 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:44 1402 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:44 1402 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:44 1404 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:44 1406 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:44 1409 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:44 1410 NetworkStats::stepEvent(): Recv: 3504 bytes/sec
+14:01:44 1411 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:44 1413 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:44 1415 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:44 1415 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:44 1417 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:44 1418 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:44 1419 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:44 1422 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:44 1424 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:44 1425 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:44 1427 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:44 1427 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:44 1427 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:44 1427 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:45 1429 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:45 1432 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:45 1434 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:45 1434 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:45 1436 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:45 1438 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:45 1440 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:45 1440 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:45 1440 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:45 1440 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:45 1440 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:45 1440 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:45 1440 NetworkStats::stepEvent(): Recv: 5795 bytes/sec
+14:01:45 1442 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:45 1445 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:45 1445 NetworkStats::networkEvent(): recv time msg, RTT: 164.565994 ms
+14:01:45 1449 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:45 1451 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:45 1451 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:45 1451 NetworkStats::networkEvent(): Recv a message, size: 417
+14:01:45 1451 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:45 1453 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:46 1458 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:46 1460 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:46 1461 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:46 1461 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:46 1461 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:46 1461 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:46 1461 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:46 1463 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:46 1463 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:46 1463 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:46 1463 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:46 1465 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:46 1466 NetworkStats::networkEvent(): Recv a message, size: 160
+14:01:46 1468 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:46 1468 NetworkStats::networkEvent(): Recv a message, size: 417
+14:01:46 1470 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:46 1470 NetworkStats::stepEvent(): Recv: 5526 bytes/sec
+14:01:46 1472 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:46 1472 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:46 1474 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:46 1476 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:46 1478 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:46 1478 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:46 1478 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:46 1478 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:46 1480 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:46 1483 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:46 1483 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:46 1483 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:46 1483 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:46 1483 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:46 1483 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:46 1483 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:46 1483 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:46 1485 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:46 1485 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:46 1487 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:47 1489 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:47 1491 NetworkStats::networkEvent(): Recv a message, size: 417
+14:01:47 1493 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:47 1497 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:47 1500 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:47 1500 NetworkStats::stepEvent(): Recv: 5244 bytes/sec
+14:01:47 1501 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:47 1501 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:47 1501 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:47 1501 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:47 1501 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:47 1501 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:47 1502 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:47 1502 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:47 1503 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:47 1503 NetworkStats::networkEvent(): recv time msg, RTT: 99.120003 ms
+14:01:47 1503 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:47 1506 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:47 1506 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:47 1507 NetworkStats::networkEvent(): Recv a message, size: 417
+14:01:47 1509 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:47 1511 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:47 1513 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:47 1516 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:47 1518 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:48 1520 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:48 1523 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:48 1524 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:48 1526 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:48 1528 NetworkStats::networkEvent(): Recv a message, size: 417
+14:01:48 1530 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:48 1530 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:48 1530 NetworkStats::stepEvent(): Recv: 5757 bytes/sec
+14:01:48 1531 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:48 1533 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:48 1533 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:48 1533 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:48 1535 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:48 1535 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:48 1535 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:48 1535 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:48 1535 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:48 1537 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:48 1537 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:48 1537 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:48 1537 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:48 1537 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:48 1539 NetworkStats::networkEvent(): Recv a message, size: 178
+14:01:48 1542 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:48 1544 NetworkStats::networkEvent(): Recv a message, size: 417
+14:01:48 1546 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:48 1548 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:49 1551 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:49 1553 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:49 1555 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:49 1558 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:49 1560 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:49 1560 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:49 1560 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:49 1560 NetworkStats::stepEvent(): Recv: 6229 bytes/sec
+14:01:49 1562 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:49 1564 NetworkStats::networkEvent(): recv time msg, RTT: 131.763000 ms
+14:01:49 1565 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:49 1566 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:49 1568 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:49 1572 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:49 1574 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:49 1574 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:49 1576 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:49 1576 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:49 1576 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:49 1576 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:49 1576 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:49 1578 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:50 1580 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:50 1583 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:50 1585 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:50 1589 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:50 1590 NetworkStats::stepEvent(): Recv: 3620 bytes/sec
+14:01:50 1591 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:50 1593 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:50 1595 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:50 1596 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:50 1596 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:50 1596 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:50 1596 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:50 1596 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:50 1596 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:50 1596 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:50 1597 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:50 1597 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:50 1598 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:50 1602 NetworkStats::networkEvent(): Recv a message, size: 160
+14:01:50 1602 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:50 1602 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:50 1602 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:50 1602 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:50 1602 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:50 1602 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:50 1603 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:50 1603 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:50 1605 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:50 1608 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:51 1610 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:51 1611 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1611 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1613 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1615 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1615 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:51 1615 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:51 1615 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:51 1619 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1620 NetworkStats::stepEvent(): Recv: 7712 bytes/sec
+14:01:51 1621 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1621 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:51 1621 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:51 1621 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:51 1623 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:51 1625 NetworkStats::networkEvent(): recv time msg, RTT: 164.979004 ms
+14:01:51 1627 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:51 1628 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1628 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1628 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:51 1628 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:51 1630 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:51 1631 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:51 1632 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1632 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1632 NetworkStats::networkEvent(): Recv a message, size: 161
+14:01:51 1632 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1632 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:51 1632 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:51 1632 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:51 1632 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:51 1632 NetworkStats::networkEvent(): Recv a message, size: 444
+14:01:51 1632 NetworkStats::networkEvent(): Recv a message, size: 444
+14:01:51 1632 NetworkStats::networkEvent(): Recv a message, size: 444
+14:01:51 1632 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:51 1632 NetworkStats::networkEvent(): Recv a message, size: 444
+14:01:51 1634 NetworkStats::networkEvent(): Recv a message, size: 444
+14:01:51 1634 NetworkStats::networkEvent(): Recv a message, size: 444
+14:01:51 1634 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:51 1634 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:51 1634 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:51 1634 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:51 1634 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:51 1634 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:51 1634 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:51 1634 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1634 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1634 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1634 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:51 1636 NetworkStats::networkEvent(): Recv a message, size: 445
+14:01:51 1636 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:51 1638 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:52 1641 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:52 1644 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:52 1650 NetworkStats::stepEvent(): Recv: 13153 bytes/sec
+14:01:52 1651 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:52 1653 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:52 1659 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:53 1674 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:53 1680 NetworkStats::stepEvent(): Recv: 309 bytes/sec
+14:01:53 1682 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:53 1683 NetworkStats::networkEvent(): recv time msg, RTT: 98.970001 ms
+14:01:53 1685 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:53 1685 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:53 1685 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:53 1685 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:53 1685 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:53 1685 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:53 1685 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:53 1687 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:53 1694 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:54 1701 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:54 1706 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:54 1707 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:54 1707 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:54 1707 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:54 1709 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:54 1710 NetworkStats::stepEvent(): Recv: 3870 bytes/sec
+14:01:54 1719 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:54 1728 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:55 1734 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:55 1740 NetworkStats::stepEvent(): Recv: 770 bytes/sec
+14:01:55 1743 NetworkStats::networkEvent(): recv time msg, RTT: 98.989998 ms
+14:01:55 1746 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:55 1748 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:55 1748 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:55 1748 NetworkStats::networkEvent(): Recv a message, size: 440
+14:01:55 1749 NetworkStats::networkEvent(): Recv a message, size: 257
+14:01:55 1749 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:55 1752 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:56 1767 NetworkStats::networkEvent(): Recv a message, size: 177
+14:01:56 1770 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:56 1770 NetworkStats::stepEvent(): Recv: 2309 bytes/sec
+14:01:56 1773 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:56 1773 NetworkStats::networkEvent(): Recv a message, size: 441
+14:01:56 1773 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:56 1773 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:56 1773 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:56 1773 NetworkStats::networkEvent(): Recv a message, size: 44
+14:01:56 1773 NetworkStats::networkEvent(): Recv a message, size: 446
+14:01:56 1774 NetworkStats::networkEvent(): Recv a message, size: 439
+14:01:56 1778 NetworkStats::networkEvent(): Recv a message, size: 416
+14:01:56 1782 Network manager stopped
+14:01:56 1782 Total Messages received 785
+14:01:56 1782 Average Message Size: 239.807648 bytes
+14:01:56 1782 Total Bytes received 188249 bytes
+14:01:56 1782 Average throughput: 2988.079346 bytes/sec
+14:01:56 1783 World manager stopped
+14:01:56 1783 Resource manager stopped
+14:01:56 1783 Input manager stopped
+14:01:56 1783 Graphics manager stopped
+14:01:56 1783 ** Game stopped **
+14:01:56 1783 *****************************************************
