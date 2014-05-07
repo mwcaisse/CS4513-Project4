@@ -16,8 +16,8 @@ CC= g++
 #PLATFORM= -DMACOS  		# uncomment for macos
 LDFLAGS= -lncurses -lrt	# uncomment linux/cygwin
 #LDFLAGS= -lncurses 		# uncomment for macos
-INCPATH= eng-include		# path to engine includes
-ENG= lib/libdragonfly-linux64.a	# dragonfly engine
+INCPATH= /home/mitchell/dragonfly/dragonfly-v2.9/include		# path to engine includes
+ENG= /home/mitchell/dragonfly/dragonfly-v2.9/lib/libdragonfly-linux64.a	# dragonfly engine
 GAMESRC= Saucer.cpp \
          Bullet.cpp \
          Explosion.cpp \
