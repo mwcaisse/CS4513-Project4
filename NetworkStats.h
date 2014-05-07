@@ -8,7 +8,7 @@
 #ifndef NETWORKSTATS_H_
 #define NETWORKSTATS_H_
 
-#include "include/Object.h"
+#include "Object.h"
 
 class EventNetwork;
 class EventStep;

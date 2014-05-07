@@ -8,7 +8,7 @@
 #ifndef NETWORKSENTRY_H_
 #define NETWORKSENTRY_H_
 
-#include "include/Object.h"
+#include "Object.h"
 
 class NetworkSentry: public Object {
 

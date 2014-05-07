@@ -8,7 +8,7 @@
 #ifndef CLIENT_H_
 #define CLIENT_H_
 
-#include "include/Object.h"
+#include "Object.h"
 
 #include "EventNetwork.h"
 #include "EventStep.h"

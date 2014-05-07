@@ -8,7 +8,7 @@
 #ifndef HOST_H_
 #define HOST_H_
 
-#include "include/Object.h"
+#include "Object.h"
 #include "EventStep.h"
 #include "EventNetwork.h"
 #include "EventStep.h"
